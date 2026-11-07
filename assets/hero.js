@@ -1,6 +1,7 @@
 /*
   Halves hero animation. Plain JavaScript (Web Animations API), no libraries.
-  Story, about 4 seconds, plays once and holds (WCAG 2.2.2), with a Replay button:
+  Story, about 4 seconds, then a short hold and a fade, then it loops. A Pause button (WCAG 2.2.2)
+  freezes it on the finished picture; it also rests while off screen or in a hidden tab:
     1. A and B arrive, their priorities appear one by one.
     2. The priorities they share lift out and fly to the overlap of the two rings.
     3. The rings slide together and the coral overlap, the match, opens.
@@ -44,9 +45,13 @@
     return a;
   }
 
-  function play() {
+  var timers = [];
+  function later(fn, ms) { var id = window.setTimeout(fn, ms); timers.push(id); return id; }
+  function stopTimers() { timers.forEach(window.clearTimeout); timers = []; }
+
+  function play(instant) {
+    stopTimers();
     clear();
-    if (replay) replay.hidden = true;
     var out = ease("out"), inn = ease("in");
 
     // 0.1s  A and B arrive
@@ -62,7 +67,7 @@
       anim(c, [{ opacity: 1 }, { opacity: 0.35 }], { duration: 600, delay: 1900, composite: "replace", easing: "ease" });
     });
     // 1.7s  shared priorities lift out and fly into the middle (positions measured once the people have settled)
-    window.setTimeout(function () {
+    function fly() {
       var t = markEl.getBoundingClientRect();
       var cx = t.left + t.width / 2, cy = t.top + t.height / 2;
       shared.forEach(function (c) {
@@ -76,7 +81,8 @@
           { opacity: 0, transform: "translate(" + dx + "px," + dy + "px) scale(.2)" }
         ], { duration: 1300, delay: 800, easing: inn });
       });
-    }, 900);
+    }
+    if (instant) { fly(); } else { later(fly, 900); }
     // 2.0s  the two rings are drawn together
     anim(ringL, [{ transform: "translateX(-30px)" }, { transform: "translateX(0)" }], { duration: 1000, delay: 2000, easing: out });
     anim(ringR, [{ transform: "translateX(30px)" }, { transform: "translateX(0)" }], { duration: 1000, delay: 2000, easing: out });
@@ -85,7 +91,7 @@
     // 3.3s  the reason rises
     anim(why, [{ opacity: 0, transform: "translateY(18px)" }, { opacity: 1, transform: "none" }], { duration: 700, delay: 3300 });
 
-    window.setTimeout(function () { if (replay) replay.hidden = false; }, 4300);
+    if (instant) { running.forEach(function (a) { a.finish(); }); }
   }
 
   function finalState() {
@@ -104,16 +110,55 @@
     els.forEach(function (e) { io.observe(e); });
   }
 
-  if (replay) replay.addEventListener("click", play);
+  // Loop: play (about 4.3s), hold the finished picture, fade out, play again
+  var HOLD = 2600, FADE = 450, CYCLE = 4300;
+  var userPaused = false, visible = false;
+  var fadeTargets = [].concat($$(".stage-people"), [why]);
+
+  function cycle() {
+    stopTimers();
+    fadeTargets.forEach(function (n) { n.style.opacity = ""; });
+    play(false);
+    later(function () {
+      var fades = fadeTargets.map(function (n) { return n.animate([{ opacity: 1 }, { opacity: 0 }], { duration: FADE, fill: "forwards" }); });
+      running = running.concat(fades);
+      later(cycle, FADE + 80);
+    }, CYCLE + HOLD);
+  }
+
+  function setLabel() {
+    if (!replay) return;
+    replay.textContent = userPaused ? "Play animation" : "Pause animation";
+    replay.setAttribute("aria-pressed", userPaused ? "true" : "false");
+  }
+
+  function freezeOnFinish() { stopTimers(); play(true); }
+
+  function sync() {
+    if (userPaused) return;
+    if (visible && !document.hidden) { cycle(); } else { stopTimers(); }
+  }
+
+  if (replay) {
+    replay.hidden = reduce;
+    setLabel();
+    replay.addEventListener("click", function () {
+      userPaused = !userPaused;
+      setLabel();
+      if (userPaused) { freezeOnFinish(); } else { cycle(); }
+    });
+  }
 
   if (reduce) { finalState(); } else {
-    // Start when the stage is on screen, so it is never missed below the fold
     if ("IntersectionObserver" in window) {
-      var started = false;
-      new IntersectionObserver(function (en, io) {
-        if (!started && en[0].isIntersecting) { started = true; io.disconnect(); play(); }
+      new IntersectionObserver(function (en) {
+        var now = en[0].isIntersecting;
+        if (now === visible) return;
+        visible = now;
+        sync();
       }, { threshold: 0.35 }).observe(stage);
-    } else { play(); }
+    } else { visible = true; sync(); }
+    document.addEventListener("visibilitychange", sync);
   }
   setupReveal();
 })();

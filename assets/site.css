@@ -113,3 +113,8 @@
 
 .pool h2 { margin-bottom: 1rem; }
 @media (max-width: 520px) { .replay { top: auto; bottom: 0.4rem; right: 0.5rem; } .why-card { margin-bottom: 1.6rem; } }
+
+/* Pause control gets its own row so it never sits on top of the picture */
+.stage { padding-top: clamp(2.4rem, 2rem + 1vw, 2.9rem); }
+.replay { top: 0.45rem; }
+@media (max-width: 520px) { .replay { top: 0.45rem; bottom: auto; } .why-card { margin-bottom: 0; } }
