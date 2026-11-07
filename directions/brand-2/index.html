@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rhyme: brand board (Team 2: Rename)</title>
+<style>
+@font-face{font-family:Fraunces;src:url(fonts/fraunces.woff2) format("woff2");font-weight:100 900}
+@font-face{font-family:Inter;src:url(fonts/inter.woff2) format("woff2");font-weight:100 900}
+@font-face{font-family:"IBM Plex Mono";src:url(fonts/plexmono.woff2) format("woff2")}
+:root{--ink:#1C1230;--paper:#F6F0E4;--lime:#D4F25A;--tang:#FF6B3D;--lilac:#CBC1EE}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.55 Inter,system-ui,sans-serif}
+h1,h2,h3,h4,h5{font-family:Fraunces,Georgia,serif;font-weight:600;line-height:1.05;margin:0}
+code,.mono,small{font-family:"IBM Plex Mono",Menlo,monospace}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:9;background:rgba(246,240,228,.92);backdrop-filter:blur(8px);border-bottom:1px solid #1c123020}
+nav .wrap{display:flex;gap:18px;align-items:center;overflow-x:auto;white-space:nowrap;padding-top:12px;padding-bottom:12px;font:12px "IBM Plex Mono",monospace}
+nav a{color:var(--ink);text-decoration:none;opacity:.7} nav a:hover{opacity:1}
+nav img{height:22px}
+.hero{background:var(--ink);color:var(--paper);padding:96px 0 80px}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(56px,9vw,120px);letter-spacing:-.02em}
+.hero p{font-size:20px;max-width:34ch;opacity:.85}
+.hero small{color:var(--lime);display:block;margin-bottom:20px}
+.herom{display:flex;justify-content:center}
+.herom svg{width:min(100%,380px)}
+.herom .b1{transform-origin:100px 32px;animation:b1 1.1s cubic-bezier(.2,.8,.2,1) both}
+.herom .b2{transform-origin:100px 68px;animation:b2 1.1s .25s cubic-bezier(.2,.8,.2,1) both}
+@keyframes b1{from{transform:scaleX(0)}} @keyframes b2{from{transform:scaleX(0)}}
+section{padding:84px 0;border-top:1px solid #1c123018}
+section.dark{background:var(--ink);color:var(--paper);border-color:transparent}
+.lbl{font:12px "IBM Plex Mono",monospace;color:var(--tang);margin-bottom:12px;display:block}
+.dark .lbl{color:var(--lime)}
+h2{font-size:clamp(34px,5vw,56px);margin-bottom:16px;letter-spacing:-.01em}
+.lead{max-width:62ch;font-size:19px;opacity:.85}
+.grid{display:grid;gap:20px;margin-top:36px}
+.g2{grid-template-columns:repeat(2,1fr)} .g3{grid-template-columns:repeat(3,1fr)} .g5{grid-template-columns:repeat(5,1fr)}
+.nm{border:1px solid #1c123026;border-radius:20px;padding:24px;background:#fff6}
+.nm.win{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.nm header{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px}
+.nm h3{font-size:32px} .nm header span{font:12px "IBM Plex Mono",monospace;color:var(--tang)} .nm.win header span{color:var(--lime)}
+.nm p{font-size:15px;margin:8px 0} .nm .why1{font-family:Fraunces,serif;font-size:18px}
+.nm.win .risk b{color:var(--lime)}
+.tile{border-radius:24px;padding:40px;display:flex;align-items:center;justify-content:center;min-height:220px}
+.tile>div{text-align:center}
+.tile img{max-width:100%;height:auto;max-height:130px}
+.tile.tall img{max-height:150px}
+.cap{font:12px "IBM Plex Mono",monospace;opacity:.65;margin-top:8px}
+.grid3b{display:grid;gap:20px;grid-template-columns:repeat(4,1fr);margin-top:20px}
+.grid3b.p5{grid-template-columns:repeat(5,1fr)}
+.sw{border-radius:20px;border:1px solid #ffffff33;padding:22px;min-height:230px;display:flex;flex-direction:column;justify-content:flex-end;gap:6px;box-shadow:inset 0 0 0 1px #1c123022}
+.sw b{font:600 22px Fraunces,serif} .sw code{font-size:13px} .sw span{font-size:13px;opacity:.85}
+table{border-collapse:collapse;width:100%;font-size:15px;margin-top:24px}
+td,th{padding:10px 12px;border-bottom:1px solid #1c123022;text-align:left}
+td i{display:inline-block;font:600 16px Fraunces,serif;font-style:normal;padding:3px 10px;border-radius:8px;margin-right:8px}
+.tw{overflow-x:auto}
+.specimen{border-radius:24px;padding:36px;background:#fff6;border:1px solid #1c123022}
+.specimen .big{font:600 clamp(48px,8vw,104px)/1 Fraunces,serif;letter-spacing:-.02em}
+.dark .specimen{background:#ffffff0d;border-color:#ffffff22}
+.motion{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}
+.stage{background:var(--ink);border-radius:24px;padding:48px;display:flex;justify-content:center;min-height:260px;align-items:center}
+.stage svg{width:200px}
+.stage .b1,.stage .b2{transform-box:fill-box;transform-origin:right center}
+.stage .b1{animation:loop1 3.2s cubic-bezier(.2,.8,.2,1) infinite}
+.stage .b2{animation:loop2 3.2s cubic-bezier(.2,.8,.2,1) infinite}
+@keyframes loop1{0%{transform:scaleX(0)}30%,85%{transform:scaleX(1)}100%{transform:scaleX(1);opacity:0}}
+@keyframes loop2{0%,12%{transform:scaleX(0)}42%,85%{transform:scaleX(1)}100%{transform:scaleX(1);opacity:0}}
+.icons{display:flex;gap:28px;align-items:flex-end;flex-wrap:wrap;margin-top:32px}
+.icons figure{margin:0;text-align:center;font:11px "IBM Plex Mono",monospace}
+.icons img{display:block;margin:0 auto 6px;border-radius:22.37%}
+.home{background:linear-gradient(180deg,#CBC1EE,#F6F0E4);border-radius:28px;padding:28px;display:grid;grid-template-columns:repeat(4,70px);gap:20px 24px;justify-content:center;width:max-content;max-width:100%}
+.home div{text-align:center;font:10px Inter,sans-serif;color:var(--ink)} .home img{width:60px;height:60px;border-radius:14px;display:block;margin:0 auto 4px}
+.home .fake{width:60px;height:60px;border-radius:14px;background:#ffffff99;margin:0 auto 4px}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.dd li{margin:8px 0} ul{padding-left:20px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.chips span{border:1px solid currentColor;border-radius:99px;padding:4px 12px;font-size:14px}
+.tag{border-radius:20px;padding:22px 26px;font:600 clamp(22px,3vw,32px)/1.15 Fraunces,serif;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.tag small{font-weight:400;font-size:11px;opacity:.7}
+.photo{aspect-ratio:3/4;border-radius:20px;position:relative;overflow:hidden}
+.diptych{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.diptych .photo{aspect-ratio:3/4}
+.photo .sun{position:absolute;border-radius:50%} .photo .hz{position:absolute;left:0;right:0;height:2px;background:#ffffff88}
+.photo .fig{position:absolute;bottom:0;border-radius:99px 99px 0 0}
+.pair{display:flex;flex-direction:column;gap:10px;justify-content:center;aspect-ratio:3/4;border-radius:20px;padding:18px}
+.pair i{display:block;height:16%;border-radius:99px}
+/* ads */
+.ads{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:36px;align-items:start}
+.adcell{margin:0}
+.ad{border-radius:6px;padding:7%;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;box-shadow:0 1px 0 #1c123033,0 18px 40px -20px #1c123055;position:relative;container-type:inline-size}
+.ad.tall{aspect-ratio:4/5} .ad.wide{aspect-ratio:3/2;flex-direction:row;align-items:stretch} .ad.bill{aspect-ratio:3.2/1;grid-column:span 1}
+.ad h4{font-size:clamp(20px,11cqw,64px);letter-spacing:-.015em;line-height:1.02}
+.ad.wide h4{font-size:clamp(16px,7.4cqw,40px)}
+.ad.bill h4{font-size:12cqw}
+.ad p{font-size:clamp(11px,3.6cqw,18px);line-height:1.35;margin:10px 0 0;max-width:30ch}
+.ad.wide p{font-size:clamp(9px,2.6cqw,14px)}
+.ad em.cta{font:normal 500 clamp(9px,2.8cqw,13px) "IBM Plex Mono",monospace;background:var(--ac);color:var(--cc);padding:6px 10px;border-radius:99px;align-self:flex-start;display:inline-block}
+.ad.poem em.cta,.ad.left em.cta{background:none;color:inherit;padding:0;border-bottom:2px solid var(--ac);border-radius:0}
+.ad.giant em.cta{background:none;padding:0;color:inherit}
+.ad.tall.giant2 em.cta{background:#1C1230;color:#D4F25A}
+.ad.tall.giant em.cta{display:none}
+.ad .mk{width:15cqw;min-width:44px;height:auto} .ad.wide .mk{width:24cqw}
+.ad .ft{display:flex;justify-content:space-between;align-items:flex-end;gap:12px}
+.ad .g{display:flex;align-items:center;justify-content:center;flex:0 0 34%}
+.ad .t{display:flex;flex-direction:column;justify-content:space-between;flex:1;gap:8px}
+.ad.poem h4{font-size:11cqw;line-height:1.08} .ad.poem h4 em{font-style:italic;color:var(--ac);font-weight:400}
+.ad.bill{justify-content:center;gap:2.5%}
+.ad .lines{display:flex;flex-direction:column;gap:2.2cqw} .ad .lines i{display:block;height:3.6cqw;border-radius:99px;background:var(--ac);margin-left:auto}
+.ad.bill .lines{margin:0}
+.ad.bill em.cta{position:absolute;right:3%;top:8%;font-size:2cqw}
+.ad .rc{background:#F6F0E4;color:#1C1230;border-radius:5cqw;padding:6cqw;margin:4cqw 0}
+.ad .rc small{font-size:2.6cqw;color:#FF6B3D} .ad .rc b{display:block;font:600 7cqw/1.05 Fraunces,serif;margin:2cqw 0} .ad .rc span{font-size:4cqw;line-height:1.3;display:block}
+.ad .bub{display:flex;flex-direction:column;gap:2.5cqw} .ad .bub i{display:block;background:#1C1230;color:#D4F25A;font:600 6cqw Fraunces,serif;font-style:normal;padding:2.4cqw 4cqw;border-radius:99px}
+.ad .an i{width:80%;animation:a1 3s ease-out infinite;transform-origin:right} .ad .an i+i{width:55%;animation-name:a2}
+@keyframes a1{0%{transform:scaleX(0)}35%,100%{transform:scaleX(1)}} @keyframes a2{0%,15%{transform:scaleX(0)}50%,100%{transform:scaleX(1)}}
+.adcell figcaption{font-size:13px;margin-top:10px;line-height:1.4} .adcell figcaption b{font-family:"IBM Plex Mono",monospace;color:var(--tang)} .adcell figcaption span{opacity:.75}
+.sk{position:relative;aspect-ratio:4/3;border:1px dashed #1c123055;border-radius:8px;margin-top:10px;background:#fff5}
+.sk i{position:absolute;border:1px solid #1c123088;background:#1c123010;border-radius:3px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.sk u{text-decoration:none;font:9px "IBM Plex Mono",monospace;opacity:.7;text-align:center}
+.ad.bill{grid-column:1/-1} .adcell:has(.bill){grid-column:1/-1} .adcell:has(.wide){grid-column:span 1}
+.adcell:has(.bill) .sk{display:none}
+/* stickers */
+.stks{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:36px}
+.stk{margin:0} .stk figcaption{font-size:14px;margin-top:12px}
+.stk{background:#1c123008;border-radius:20px;padding:24px}
+.st{margin:0 auto;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;box-shadow:0 0 0 6px #fff,0 8px 20px #1c123044;font-family:Fraunces,serif}
+.st.die{width:150px;height:130px;border-radius:30px;background:#1C1230;padding:18px} .st.die svg{width:100%}
+.st.pill{width:230px;height:84px;border-radius:99px;padding:8px} .st.pill small{font-size:11px} .st.pill b{font-size:24px}
+.st.round{width:150px;height:150px;border-radius:50%} .st.round b{font-size:24px;line-height:1.05}
+.st.round i{display:block;width:60px;height:8px;border-radius:9px;background:#1C1230;margin-top:10px}
+.st.dual{background:none;box-shadow:none;gap:6px;align-items:flex-end} .st.dual i{font:600 20px Fraunces,serif;font-style:normal;padding:12px 22px;border-radius:99px;box-shadow:0 0 0 4px #fff,0 8px 16px #1c123033;color:#1C1230}
+.st.dual i+i{padding-left:40px}
+.signs{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:28px}
+.sg{border:1px solid #1c123026;border-radius:16px;padding:18px} .sg b{font:600 20px Fraunces,serif} .sg p{font-size:14px;margin:6px 0 0;opacity:.85}
+/* screens */
+.phs{display:flex;gap:22px;overflow-x:auto;padding:12px 4px 24px;margin-top:28px;scroll-snap-type:x mandatory}
+.ph{margin:0;flex:0 0 min(250px,calc((100% - 88px)/5));min-width:226px;scroll-snap-align:start}
+.ph .cap{border-radius:22px 22px 0 0;padding:20px 18px 14px;height:150px;opacity:1;margin:0}
+.ph h5{font-size:21px;line-height:1.04} .ph .cap p{font-size:13px;margin:8px 0 0;opacity:.8}
+.scr{background:#F6F0E4;border:6px solid #1C1230;border-top:0;border-radius:0 0 34px 34px;height:380px;position:relative;overflow:hidden;color:#1C1230}
+.notch{position:absolute;top:0;left:50%;transform:translateX(-50%);width:34%;height:7px;background:#1C1230;border-radius:0 0 8px 8px}
+.ui{padding:18px 14px;display:flex;flex-direction:column;gap:12px;height:100%;justify-content:space-between}
+.uic{background:#fff;border-radius:18px;padding:10px;box-shadow:0 6px 18px #1c123022}
+.ph-img{height:96px;border-radius:12px;background:#CBC1EE;display:flex;align-items:flex-end;gap:6px;padding:10px;margin-bottom:8px}
+.ph-img i{display:block;height:60%;width:30%;background:#1C1230;border-radius:99px 99px 6px 6px;opacity:.85} .ph-img i+i{height:45%;background:#FF6B3D;opacity:1}
+.uic b{font:600 17px Fraunces,serif;display:block} .uic span{font-size:12px;opacity:.8}
+.why{margin-top:8px;background:#D4F25A;border-radius:10px;padding:8px} .why small{display:block;font-size:9px} .why span{opacity:1;font-size:12px}
+.btn{background:#1C1230;color:#F6F0E4;text-align:center;border-radius:99px;padding:11px;font-weight:600;font-size:13px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px} .two div{background:#fff;border-radius:14px;padding:10px;min-height:150px;display:flex;flex-direction:column;gap:8px}
+.two i{display:block;height:20px;border-radius:99px;background:#1C1230} .two div+div i{background:#FF6B3D} .two small{font-size:10px}
+.li{background:#fff;border-radius:14px;padding:12px;box-shadow:0 4px 12px #1c123018} .li b{font:600 16px Fraunces,serif;display:block} .li span{font-size:12px;opacity:.8}
+.bigbars{flex:1;display:flex;align-items:center} .bigbars svg{width:100%}
+footer{background:var(--ink);color:var(--paper);padding:60px 0;font-size:14px}
+@media(min-width:1000px){.phs{display:grid;grid-template-columns:repeat(5,1fr);overflow:visible} .ph{min-width:0}}
+@media(max-width:900px){.grid3b.p5{grid-template-columns:1fr 1fr} .hero .wrap,.motion,.two-col{grid-template-columns:1fr} .g2,.g3,.g5,.ads,.stks,.signs{grid-template-columns:1fr 1fr} .grid3b{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.grid3b.p5{grid-template-columns:1fr} .g2,.g3,.g5,.ads,.stks,.signs,.grid3b{grid-template-columns:1fr} .wrap{padding:0 18px} section{padding:56px 0} .hero{padding:56px 0} .home{grid-template-columns:repeat(4,60px);gap:14px;padding:18px} .ph{flex-basis:230px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}}
+</style></head><body>
+<nav><div class="wrap"><img src="logo/lockup-1color-ink.svg" alt="Rhyme">
+<a href="#name">01 name</a><a href="#logo">02 logo</a><a href="#icon">03 icon</a><a href="#color">04 color</a><a href="#type">05 type</a><a href="#motion">06 motion</a><a href="#image">07 image</a><a href="#voice">08 voice</a><a href="#ads">09 ads</a><a href="#signage">10 signage</a><a href="#store">11 app store</a></div></nav>
+
+<header class="hero"><div class="wrap"><div><small>BRAND TEAM 2 / DIRECTION: RENAME</small><h1>Rhyme.</h1><p>Matched both ways. With a reason.<br>Dating for New York, introduced only when the fit goes both ways.</p></div>
+<div class="herom"><svg class="mk" viewBox="0 0 120 100" aria-hidden="true"><rect class="b1" x="10" y="18" width="90" height="28" rx="14" fill="#F6F0E4"/><rect class="b2" x="42" y="54" width="58" height="28" rx="14" fill="#D4F25A"/></svg></div></div></header>
+
+<section id="name"><div class="wrap"><span class="lbl">01 / NAME</span><h2>Why rename: a half is not a whole.</h2>
+<p class="lead">"Half/Halves" is a crowded namespace and can read as incompleteness, a thing the copy has to defend against (the platform doc bans 'other half' for this reason). We looked for a name that carries <b>reciprocal fit with a stated reason</b> on its own. Knockout searches run Nov 7, 2026 (App Store search API, whois/HTTP, web search). These are knockouts, not legal clearance.</p>
+<div class="grid g2"><article class="nm win"><header><h3>Rhyme</h3><span>WINNER</span></header><p class="why1">Two lines that end alike but aren't identical. Fit without sameness; 'rhyme and reason' is the idiom for exactly our promise (a fit, with a reason).</p><p><b>Knockout:</b> Apple App Store US: no dating app named Rhyme in top results (itinerary, rap, dictionary, game apps only). rhyme.com is held by a topic-based social platform (since 1997). rhymeapp.com, tryrhyme.com, joinrhyme.com are registered. meetrhyme.com showed no registration. A near-sound 'Ryme' (activity-based matching app) appeared in web results.</p><p class="risk"><b>Risk:</b> Medium. Class 9/45 clearance search + attorney review needed, especially vs. 'Ryme'. Mitigate: always use full word, rhyme.dating style domain, distinct mark.</p></article><article class="nm "><header><h3>Couplet</h3><span>Runner-up</span></header><p class="why1">Two lines that rhyme as a pair. Warm, bookish, 'couple' built in.</p><p><b>Knockout:</b> Apple App Store US: 'Couplet: Spice Up Relationship' and 'Couplet Confessions' (Lifestyle, same developer), plus couplet.love. couplet.com is held by MarkMonitor (302 redirect). couplet.dating returns no website.</p><p class="risk"><b>Risk:</b> High. Direct relationship-app overlap in adjacent class; confusion likely in App Store search.</p></article><article class="nm "><header><h3>Tessera</h3><span>Alternate</span></header><p class="why1">A single mosaic tile: it only means something beside the one that fits. Quiet, premium.</p><p><b>Knockout:</b> Apple App Store US: only games, a personal assistant app and a music tool; no dating app. tessera.app is live (other owner). Weak link to 'reason'; harder to spell and say.</p><p class="risk"><b>Risk:</b> Medium-low in dating; weaker brand story and hard to say out loud. Fallback if Rhyme clears badly.</p></article><article class="nm "><header><h3>(Eliminated) Dovetail</h3><span>Out</span></header><p class="why1">Joinery where each side is cut to fit the other.</p><p><b>Knockout:</b> A live dating app already exists (dovetail.dating) with a similar slow, one-match-a-day idea. Dovetail.com is a large research software company.</p><p class="risk"><b>Risk:</b> Blocked. Do not use.</p></article><article class="nm "><header><h3>(Eliminated) Twofold / Ditto / Latch</h3><span>Out</span></header><p class="why1">Considered for 'both ways'.</p><p><b>Knockout:</b> Twofold: 6+ unrelated App Store apps incl. a couples app (Lifestyle) and active trytwofold.com. Ditto: many social apps incl. 'Ditto: Fun Social Media'. Latch: smart-lock company (Latchable).</p><p class="risk"><b>Risk:</b> Crowded. Do not use.</p></article></div>
+<p class="lead" style="margin-top:28px"><b>Pick: Rhyme.</b> A rhyme is two lines that are not the same but belong together, and 'rhyme and reason' is the idiom for the promise. It is a short, soft, speakable word. Suggested handles/domains to check or buy: rhyme.dating, meetrhyme.com (no registration seen), getrhyme.com, @rhymeapp. Do not rely on rhyme.com / rhymeapp.com.</p></div></section>
+
+<section id="logo" class="dark"><div class="wrap"><span class="lbl">02 / LOGO</span><h2>Two lines. Same ending.</h2>
+<p class="lead">The mark is a couplet: a long bar and a short bar that stop on the same right edge. Different lengths, same landing. It reads as two sides arriving together, as two chat bubbles, as two transit lines. The wordmark is lowercase Fraunces (SemiBold, optical size 144) drawn to outlines, tightened 14 units per glyph.</p>
+<div class="grid g2">
+<div class="tile" style="background:#F6F0E4"><div><img src="logo/lockup-light.svg" alt="Rhyme lockup, light"><div class="cap" style="color:#1C1230">lockup-light.svg</div></div></div>
+<div class="tile" style="background:#1C1230;box-shadow:inset 0 0 0 1px #ffffff33"><div><img src="logo/lockup-dark.svg" alt="Rhyme lockup, dark"><div class="cap">lockup-dark.svg</div></div></div>
+<div class="tile" style="background:#CBC1EE"><div><img src="logo/lockup-1color-ink.svg" alt="1-color ink lockup"><div class="cap" style="color:#1C1230">lockup-1color-ink.svg</div></div></div>
+<div class="tile" style="background:#3B2A66"><div><img src="logo/lockup-1color-white.svg" alt="1-color white lockup"><div class="cap">lockup-1color-white.svg (for photos and dark one-ink print)</div></div></div>
+</div>
+<div class="grid g3">
+<div class="tile tall" style="background:#F6F0E4"><img src="logo/mark-light.svg" alt="mark" style="max-height:110px"></div>
+<div class="tile tall" style="background:#1C1230;box-shadow:inset 0 0 0 1px #ffffff33"><img src="logo/mark-dark.svg" alt="mark dark" style="max-height:110px"></div>
+<div class="tile tall" style="background:#D4F25A"><img src="logo/mark-1color-ink.svg" alt="mark 1 color" style="max-height:110px"></div>
+<div class="tile" style="background:#F6F0E4"><img src="logo/wordmark-light.svg" alt="wordmark" style="max-height:90px"></div>
+<div class="tile" style="background:#1C1230;box-shadow:inset 0 0 0 1px #ffffff33"><img src="logo/wordmark-dark.svg" alt="wordmark dark" style="max-height:90px"></div>
+<div class="tile" style="background:#D4F25A"><img src="logo/wordmark-1color-ink.svg" alt="wordmark 1 color" style="max-height:90px"></div></div>
+<div class="two-col" style="margin-top:36px"><div><h3 style="font-size:26px">Rules</h3><ul class="dd"><li>Clear space: one bar-height (28 units of the mark) on all sides.</li><li>Minimum size: mark 16 px / 6 mm; lockup 72 px wide / 20 mm.</li><li>Light: Plum bars with a Tangerine short bar on Paper. Dark: Paper long bar, Lime short bar on Plum Ink.</li><li>1-color: both bars same color. For stamps, emboss, one-ink print.</li><li>Never: tilt, outline, add a gradient, re-space the bars, align the bars to the left, or swap the long and short bars.</li></ul></div>
+<div><h3 style="font-size:26px">Files</h3><p class="mono" style="font-size:13px;line-height:1.9">logo/mark-{light,dark,1color-ink,1color-white}.svg<br>logo/lockup-{light,dark,1color-ink,1color-white}.svg<br>logo/wordmark-{light,dark,1color-ink}.svg<br>icon/rhyme-icon-1024.svg + PNG</p></div></div></div></section>
+
+<section id="icon"><div class="wrap"><span class="lbl">03 / APP ICON</span><h2>Legible at 29 px.</h2>
+<p class="lead">Two bars, no text, no gradients. Bars are 22% of the icon height with a tight gap, so the shape survives at tiny sizes. Dark is the primary icon; a Paper variant is for tinted/light modes.</p>
+<div class="icons">
+<figure><img src="icon/rhyme-icon-1024.png" width="220" alt="1024 icon">1024 (App Store)</figure>
+<figure><img src="icon/rhyme-icon-1024-light.png" width="220" alt="light icon" style="box-shadow:0 0 0 1px #1c123022">1024 light variant</figure>
+<figure><img src="icon/rhyme-icon-180.png" width="180" alt="180">180 (iPhone @3x)</figure>
+<figure><img src="icon/rhyme-icon-120.png" width="120" alt="120">120</figure>
+<figure><img src="icon/rhyme-icon-87.png" width="87" alt="87">87</figure>
+<figure><img src="icon/rhyme-icon-60.png" width="60" alt="60">60</figure>
+<figure><img src="icon/rhyme-icon-40.png" width="40" alt="40">40</figure>
+<figure><img src="icon/rhyme-icon-29.png" width="29" alt="29">29</figure></div>
+<h3 style="font-size:24px;margin:44px 0 16px">On a home screen</h3>
+<div class="home"><div><div class="fake"></div>Mail</div><div><div class="fake"></div>Maps</div><div><img src="icon/rhyme-icon-120.png" alt="Rhyme">Rhyme</div><div><div class="fake"></div>Notes</div><div><div class="fake"></div>Photos</div><div><div class="fake"></div>Music</div><div><div class="fake"></div>Wallet</div><div><div class="fake"></div>Clock</div></div></div></section>
+
+<section id="color" class="dark"><div class="wrap"><span class="lbl">04 / PALETTE</span><h2>Plum, paper, and a second line.</h2>
+<p class="lead">Leaves navy and coral behind. Plum Ink is warmer than navy and keeps the board distinct from the old palette. The rule: every layout gets one second-line color (Lime on dark, Tangerine on light), used for the short bar and one highlight.</p>
+<div class="grid3b p5" id="swg"><div class="sw" style="background:#1C1230;color:#F6F0E4"><b>Plum Ink</b><code>#1C1230</code><span>Primary dark. Text, dark surfaces, icon ground.</span></div><div class="sw" style="background:#F6F0E4;color:#1C1230"><b>Paper</b><code>#F6F0E4</code><span>Primary light. Backgrounds, cards.</span></div><div class="sw" style="background:#D4F25A;color:#1C1230"><b>Lime Signal</b><code>#D4F25A</code><span>The 'second line'. Active states, CTA on dark, short bar on dark.</span></div><div class="sw" style="background:#FF6B3D;color:#1C1230"><b>Tangerine</b><code>#FF6B3D</code><span>The 'second line' on light. Fills, bars, highlights. On Paper it is 2.5:1, so never for text; use it as shape only.</span></div><div class="sw" style="background:#CBC1EE;color:#1C1230"><b>Lilac Mist</b><code>#CBC1EE</code><span>Quiet surface for secondary cards and OOH fields.</span></div></div>
+<div class="tw"><table><tr><th>Pair</th><th>Contrast</th><th>Use</th></tr><tr><td><i style="background:#F6F0E4;color:#1C1230">Aa</i> Plum Ink on Paper</td><td>15.7:1</td><td>AAA body</td></tr><tr><td><i style="background:#1C1230;color:#F6F0E4">Aa</i> Paper on Plum Ink</td><td>15.7:1</td><td>AAA body</td></tr><tr><td><i style="background:#1C1230;color:#D4F25A">Aa</i> Lime on Plum Ink</td><td>14.1:1</td><td>AAA body</td></tr><tr><td><i style="background:#D4F25A;color:#1C1230">Aa</i> Plum Ink on Lime</td><td>14.1:1</td><td>AAA body</td></tr><tr><td><i style="background:#FF6B3D;color:#1C1230">Aa</i> Plum Ink on Tangerine</td><td>6.3:1</td><td>AA body</td></tr><tr><td><i style="background:#F6F0E4;color:#FF6B3D">Aa</i> Tangerine on Paper (shapes only)</td><td>2.5:1</td><td>Shapes only, never text</td></tr><tr><td><i style="background:#CBC1EE;color:#1C1230">Aa</i> Plum Ink on Lilac</td><td>10.5:1</td><td>AAA body</td></tr></table></div></div></section>
+
+<section id="type"><div class="wrap"><span class="lbl">05 / TYPE</span><h2>A serif with a smile, a plain sans, a mono for reasons.</h2>
+<p class="lead">All three are open-source (SIL OFL) and free on Google Fonts. Fraunces carries the poetry, Inter does the work, IBM Plex Mono is reserved for the "Why you're meeting" line and labels, so reasons look like annotations.</p>
+<div class="grid g3">
+<div class="specimen"><small>Display: Fraunces 600</small><div class="big">Rhyme</div><p style="font:600 28px Fraunces,serif">Matched both ways.</p></div>
+<div class="specimen"><small>Text: Inter 400/600</small><div class="big" style="font-family:Inter;font-size:clamp(48px,6vw,80px)">Aa</div><p>Plain sentences. One idea per line. Max 12 words in a headline.</p></div>
+<div class="specimen"><small>Reasons: IBM Plex Mono 400</small><div class="big" style="font-family:'IBM Plex Mono';font-weight:400;font-size:clamp(44px,6vw,72px)">Why</div><p class="mono" style="font-size:14px">Why you're meeting: you both cook on Sundays.</p></div></div>
+<div class="tw"><table><tr><th>Role</th><th>Font</th><th>Size / leading</th></tr><tr><td>H1</td><td>Fraunces 600, -1.5% tracking</td><td>56-120 / 1.0</td></tr><tr><td>H2</td><td>Fraunces 600</td><td>34-56 / 1.05</td></tr><tr><td>Body</td><td>Inter 400</td><td>17 / 1.55</td></tr><tr><td>Reason line</td><td>IBM Plex Mono 400</td><td>13-14 / 1.4</td></tr><tr><td>Italic emphasis</td><td>Fraunces italic, one line per layout</td><td>As headline</td></tr></table></div></div></section>
+
+<section id="motion" class="dark"><div class="wrap"><span class="lbl">06 / MOTION</span><h2>Land together.</h2>
+<div class="motion"><div><p class="lead">The motion principle: <b>two things move differently and arrive at the same place.</b> One element is long and slow, one short and quick (or the reverse), both ease-out and stop on a shared edge. Use it for the logo animation, screen transitions between 'you' and 'them', loading, and the reveal of a reason.</p>
+<ul class="dd"><li>Duration 450-900 ms, ease-out (cubic-bezier .2,.8,.2,1). No bounce, no overshoot.</li><li>Offset start by 120-250 ms; they never finish apart.</li><li>On a successful mutual yes: both bars settle, one soft haptic, nothing else. No confetti.</li><li>Reduce Motion: replace with a 150 ms fade.</li></ul></div>
+<div class="stage"><svg class="mk" viewBox="0 0 120 100" aria-hidden="true"><rect class="b1" x="10" y="18" width="90" height="28" rx="14" fill="#F6F0E4"/><rect class="b2" x="42" y="54" width="58" height="28" rx="14" fill="#D4F25A"/></svg></div></div></div></section>
+
+<section id="image"><div class="wrap"><span class="lbl">07 / IMAGE STYLE</span><h2>Pairs, not portraits.</h2>
+<div class="two-col"><div><h3 style="font-size:26px">Photography</h3><ul class="dd"><li>Diptychs: two frames, two different people or places, one shared horizon line or one shared object (the 'rhyme').</li><li>Real New York, daylight, flat light, a little grain; stoops, train windows, bookstores, bodegas, rooftops.</li><li>People caught doing, not posing: reading, cooking, waiting. No staged laughing at salads, no couples kissing.</li><li>Faces optional. Hands, shoes and shared details often tell the match better.</li><li>Casting: real New Yorkers 21-39, range of body, age, race, orientation and gender. Model releases required.</li></ul>
+<h3 style="font-size:26px;margin-top:24px">Illustration</h3><ul class="dd"><li>Built from the pill: rounded bars with a long and a short version always ending on the same edge.</li><li>Flat color from the palette, 2 colors max per piece, no outlines or textures.</li><li>Used for UI states, empty screens, event graphics and ads when photos can't carry it.</li></ul></div>
+<div><div class="diptych"><div class="photo" style="background:#CBC1EE"><div class="hz" style="top:62%"></div><div class="sun" style="width:34%;aspect-ratio:1;background:#FF6B3D;top:14%;left:18%"></div><div class="fig" style="left:46%;width:30%;height:44%;background:#1C1230"></div></div>
+<div class="photo" style="background:#F6F0E4;box-shadow:inset 0 0 0 1px #1c123022"><div class="hz" style="top:62%;background:#1c123055"></div><div class="sun" style="width:34%;aspect-ratio:1;background:#D4F25A;top:20%;right:14%"></div><div class="fig" style="left:20%;width:34%;height:38%;background:#FF6B3D"></div></div></div>
+<p class="cap">Diptych sketch: different subjects, same horizon.</p>
+<div class="diptych" style="margin-top:14px"><div class="pair" style="background:#1C1230"><i style="width:90%;margin-left:auto;background:#F6F0E4"></i><i style="width:58%;margin-left:auto;background:#D4F25A"></i></div><div class="pair" style="background:#D4F25A"><i style="width:70%;margin-left:auto;background:#1C1230"></i><i style="width:90%;margin-left:auto;background:#1C1230;opacity:.15"></i></div></div>
+<p class="cap">Illustration sketch: same edge, different lengths.</p></div></div></div></section>
+
+<section id="voice" class="dark"><div class="wrap"><span class="lbl">08 / VOICE AND TONE</span><h2>The friend who tells you the truth, with a rhyme budget.</h2>
+<p class="lead">Keeps the platform voice from the existing BRAND_AND_COPY: plain, warm, dry, specific, honest about being new. Rhyme adds one rule: <b>one rhyme-pun per surface, never in a headline and the CTA at the same time.</b></p>
+<div class="grid g2"><div class="specimen"><b>Say</b><ul class="dd"><li>"We only introduce you when it fits you both."</li><li>"Each introduction comes with a reason."</li><li>"We're just starting in New York."</li><li>"Nobody pays to be seen."</li></ul></div>
+<div class="specimen"><b>Don't say</b><ul class="dd"><li>"Find your perfect match" / "soulmate" / "the one".</li><li>"Thousands of singles", "proven", "verified" (until true).</li><li>Rhyme and chime puns stacked: "Time to find your rhyme!"</li><li>Exclamation marks. Emoji strings. Competitor names.</li></ul></div></div>
+<h3 style="font-size:26px;margin:36px 0 8px">Tone dial</h3>
+<div class="tw"><table><tr><th>Moment</th><th>Tone</th><th>Example</th></tr><tr><td>Ads / OOH</td><td>Dry, confident, one joke</td><td>"Different lines. Same stop."</td></tr><tr><td>Onboarding</td><td>Plain, kind</td><td>"Tell us what you want. We'll also check what they want."</td></tr><tr><td>Introduction</td><td>Specific, calm</td><td>"Why you're meeting: you both cook on Sundays."</td></tr><tr><td>No introductions today</td><td>Honest, no guilt</td><td>"Nothing today. We'd rather send nothing than send a maybe."</td></tr><tr><td>Mismatch / pass</td><td>Gentle</td><td>"Thanks. Only you see this. It helps us choose better."</td></tr></table></div>
+<h3 style="font-size:26px;margin:36px 0 8px">Tagline options</h3>
+<div style="display:grid;gap:12px">
+<div class="tag" style="background:#D4F25A;color:#1C1230"><span>Rhyme, with reason.</span><small>RECOMMENDED / brand line</small></div>
+<div class="tag" style="background:#F6F0E4;color:#1C1230"><span>Matched both ways.</span><small>Descriptor / App Store subtitle</small></div>
+<div class="tag" style="background:#FF6B3D;color:#1C1230"><span>Different lines. Same stop.</span><small>NYC OOH campaign line</small></div>
+<div class="tag" style="background:#CBC1EE;color:#1C1230"><span>Fit goes both ways.</span><small>Short form, carried over</small></div>
+<div class="tag" style="background:#ffffff14;color:#F6F0E4"><span>Not the same. Just right together.</span><small>Manifesto line</small></div>
+<div class="tag" style="background:#ffffff14;color:#F6F0E4"><span>Say it back.</span><small>Social, CTA</small></div></div></div></section>
+
+<section id="ads"><div class="wrap"><span class="lbl">09 / ADS AND OOH</span><h2>Ten concepts.</h2>
+<p class="lead">Each ad has copy, a live comp, and a layout sketch. Copy claims only things true on a waitlist today (process, commitments), per the platform claim key. Sample reason cards are labeled Example. Billboard is shown full width.</p>
+<div class="ads"><figure class="adcell"><div class="ad wide split" style="background:#1C1230;color:#F6F0E4;--ac:#D4F25A;--cc:#1C1230"><div class="t"><h4>Different lines.<br>Same stop.</h4><p>Rhyme introduces you only when it fits you both, and tells you why.</p><em class="cta">Join the NYC founding pool</em></div><div class="g"><svg class="mk" viewBox="0 0 120 100" aria-hidden="true"><rect class="b1" x="10" y="18" width="90" height="28" rx="14" fill="#F6F0E4"/><rect class="b2" x="42" y="54" width="58" height="28" rx="14" fill="#D4F25A"/></svg></div></div><figcaption><b>01</b> Subway car card, 11 x 28 in<br><span>Headline left, two-bar mark right running like transit lines; the short bar lands on the same right edge.</span></figcaption><div class="sk"><i style="left:6%;top:12%;width:52%;height:40%"><u>headline</u></i><i style="left:6%;top:58%;width:52%;height:14%"><u>sub</u></i><i style="left:6%;top:80%;width:40%;height:10%"><u>cta</u></i><i style="left:66%;top:28%;width:28%;height:44%"><u>two-bar mark</u></i></div></figure><figure class="adcell"><div class="ad tall left" style="background:#F6F0E4;color:#1C1230;--ac:#FF6B3D;--cc:#1C1230"><h4>You don't have to be the same. You have to rhyme.</h4><p>Matched both ways, with a reason.</p><div class="ft"><svg class="mk" viewBox="0 0 120 100" aria-hidden="true"><rect class="b1" x="10" y="18" width="90" height="28" rx="14" fill="#1C1230"/><rect class="b2" x="42" y="54" width="58" height="28" rx="14" fill="#FF6B3D"/></svg><em class="cta">rhyme.dating</em></div></div><figcaption><b>02</b> Subway platform poster, 46 x 68 in<br><span>Headline fills top 60% in Fraunces. Subline small and low. Mark bottom-left, URL bottom-right with Tangerine underline.</span></figcaption><div class="sk"><i style="left:8%;top:8%;width:84%;height:52%"><u>headline</u></i><i style="left:8%;top:64%;width:70%;height:8%"><u>sub</u></i><i style="left:8%;top:88%;width:20%;height:6%"><u>mark</u></i><i style="left:66%;top:88%;width:26%;height:6%"><u>cta / url</u></i></div></figure><figure class="adcell"><div class="ad tall card" style="background:#CBC1EE;color:#1C1230;--ac:#1C1230;--cc:#F6F0E4"><h4>Every introduction comes with a reason.</h4><div class="rc"><small>Example</small><b>Why you're meeting</b><span>You both want a Sunday plan, not a Saturday one.</span></div><div class="ft"><em class="cta">Join the NYC founding pool</em><svg class="mk" viewBox="0 0 120 100" aria-hidden="true"><rect class="b1" x="10" y="18" width="90" height="28" rx="14" fill="#1C1230"/><rect class="b2" x="42" y="54" width="58" height="28" rx="14" fill="#1C1230"/></svg></div></div><figcaption><b>03</b> Bus shelter, 4 x 6 ft<br><span>A 'Why you're meeting' card photographed flat, labeled Example. Headline above, CTA below. No fake profile.</span></figcaption><div class="sk"><i style="left:8%;top:6%;width:84%;height:20%"><u>headline</u></i><i style="left:14%;top:32%;width:72%;height:42%"><u>reason card</u></i><i style="left:8%;top:86%;width:50%;height:7%"><u>cta</u></i></div></figure><figure class="adcell"><div class="ad bill giant" style="background:#D4F25A;color:#1C1230;--ac:#1C1230;--cc:#F6F0E4"><h4>Matched both ways.</h4><div class="lines"><i style="width:100%"></i><i style="width:64%"></i></div><em class="cta">Rhyme. NYC.</em></div><figcaption><b>04</b> Billboard / wall mural, 14 x 48 ft<br><span>One line, edge to edge. The long bar runs under the headline, the short bar under the last word. Nothing else.</span></figcaption><div class="sk"><i style="left:3%;top:22%;width:94%;height:36%"><u>headline</u></i><i style="left:3%;top:64%;width:94%;height:6%"><u>long bar</u></i><i style="left:3%;top:74%;width:60%;height:6%"><u>short bar</u></i></div></figure><figure class="adcell"><div class="ad tall poem" style="background:#1C1230;color:#F6F0E4;--ac:#D4F25A;--cc:#1C1230"><h4>They fit you.<br>You fit them.<br><em>We'll tell you why.</em></h4><div class="ft"><svg class="mk" viewBox="0 0 120 100" aria-hidden="true"><rect class="b1" x="10" y="18" width="90" height="28" rx="14" fill="#F6F0E4"/><rect class="b2" x="42" y="54" width="58" height="28" rx="14" fill="#D4F25A"/></svg><em class="cta">Rhyme. Founding pool, NYC.</em></div></div><figcaption><b>05</b> Stoop / sidewalk poster, 24 x 36 in<br><span>Three lines set like a couplet, last line in italic Lime. Poster pasted, not framed.</span></figcaption><div class="sk"><i style="left:10%;top:12%;width:80%;height:60%"><u>3-4 lines</u></i><i style="left:10%;top:82%;width:50%;height:6%"><u>cta</u></i><i style="left:74%;top:82%;width:16%;height:8%"><u>mark</u></i></div></figure><figure class="adcell"><div class="ad wide split" style="background:#F6F0E4;color:#1C1230;--ac:#FF6B3D;--cc:#1C1230"><div class="t"><h4>Nobody pays<br>to be seen.</h4><p>No ads. No paid visibility. We never sell your information.</p><em class="cta">rhyme.dating</em></div><div class="g"><svg class="mk" viewBox="0 0 120 100" aria-hidden="true"><rect class="b1" x="10" y="18" width="90" height="28" rx="14" fill="#1C1230"/><rect class="b2" x="42" y="54" width="58" height="28" rx="14" fill="#FF6B3D"/></svg></div></div><figcaption><b>06</b> Coffee-cup sleeve, wrap<br><span>Sleeve wrap. Headline left, mark right. Uses only commitments that are true today.</span></figcaption><div class="sk"><i style="left:6%;top:12%;width:52%;height:40%"><u>headline</u></i><i style="left:6%;top:58%;width:52%;height:14%"><u>sub</u></i><i style="left:6%;top:80%;width:40%;height:10%"><u>cta</u></i><i style="left:66%;top:28%;width:28%;height:44%"><u>two-bar mark</u></i></div></figure><figure class="adcell"><div class="ad tall anim" style="background:#1C1230;color:#F6F0E4;--ac:#D4F25A;--cc:#1C1230"><div class="lines an"><i></i><i></i></div><h4>Fewer introductions.<br>A reason for every one.</h4><em class="cta">Join the NYC founding pool</em></div><figcaption><b>07</b> LinkNYC / digital kiosk, 1080 x 1920<br><span>3-second loop: long bar draws, short bar draws, both stop on the same edge, headline resolves.</span></figcaption><div class="sk"><i style="left:10%;top:16%;width:80%;height:12%"><u>bar 1 draws</u></i><i style="left:10%;top:32%;width:56%;height:12%"><u>bar 2 draws</u></i><i style="left:10%;top:54%;width:80%;height:20%"><u>headline</u></i><i style="left:10%;top:86%;width:60%;height:6%"><u>cta</u></i></div></figure><figure class="adcell"><div class="ad tall poem" style="background:#F6F0E4;color:#1C1230;--ac:#1C1230;--cc:#F6F0E4"><h4>Roses are red.<br>Your type is a list.<br>We check theirs too.<br><em>Fit goes both ways.</em></h4><div class="ft"><svg class="mk" viewBox="0 0 120 100" aria-hidden="true"><rect class="b1" x="10" y="18" width="90" height="28" rx="14" fill="#1C1230"/><rect class="b2" x="42" y="54" width="58" height="28" rx="14" fill="#1C1230"/></svg><em class="cta">Rhyme</em></div></div><figcaption><b>08</b> Poster, 18 x 24 in (bar / bookstore windows)<br><span>Dry, one-time rhyme joke. Whole poster is type. Final line in italic Plum.</span></figcaption><div class="sk"><i style="left:10%;top:12%;width:80%;height:60%"><u>3-4 lines</u></i><i style="left:10%;top:82%;width:50%;height:6%"><u>cta</u></i><i style="left:74%;top:82%;width:16%;height:8%"><u>mark</u></i></div></figure><figure class="adcell"><div class="ad tall left" style="background:#FF6B3D;color:#1C1230;--ac:#F6F0E4;--cc:#1C1230"><h4>We're just starting in New York. Come early.</h4><p>A small founding pool. Small launch groups.</p><div class="ft"><svg class="mk" viewBox="0 0 120 100" aria-hidden="true"><rect class="b1" x="10" y="18" width="90" height="28" rx="14" fill="#1C1230"/><rect class="b2" x="42" y="54" width="58" height="28" rx="14" fill="#F6F0E4"/></svg><em class="cta">Join at rhyme.dating</em></div></div><figcaption><b>09</b> Wheatpaste, 24 x 36 in<br><span>Honest-and-new stance. Tangerine field, Plum text. Mark small bottom-left, URL bottom-right.</span></figcaption><div class="sk"><i style="left:8%;top:8%;width:84%;height:52%"><u>headline</u></i><i style="left:8%;top:64%;width:70%;height:8%"><u>sub</u></i><i style="left:8%;top:88%;width:20%;height:6%"><u>mark</u></i><i style="left:66%;top:88%;width:26%;height:6%"><u>cta / url</u></i></div></figure><figure class="adcell"><div class="ad tall giant2" style="background:#D4F25A;color:#1C1230;--ac:#1C1230;--cc:#F6F0E4"><div class="bub"><i style="width:84%">Hi.</i><i style="width:58%;margin-left:26%">Hi back.</i></div><h4>Say it back.</h4><p>Introductions only when it goes both ways.</p><em class="cta">Join the founding pool</em></div><figcaption><b>10</b> Digital banner / Instagram 4:5<br><span>Two stacked chat-bubble bars: long bar 'Hi', short bar 'Hi back', ending on the same edge. Reciprocity in one picture.</span></figcaption><div class="sk"><i style="left:8%;top:12%;width:84%;height:12%"><u>bubble: Hi</u></i><i style="left:8%;top:28%;width:62%;height:12%"><u>bubble: Hi back</u></i><i style="left:8%;top:50%;width:84%;height:24%"><u>headline</u></i><i style="left:8%;top:82%;width:84%;height:8%"><u>sub / cta</u></i></div></figure></div></div></section>
+
+<section id="signage" class="dark"><div class="wrap"><span class="lbl">10 / STICKERS AND SIGNAGE</span><h2>Small things people keep.</h2>
+<div class="stks"><figure class="stk"><div class="st die"><svg class="mk" viewBox="0 0 120 100" aria-hidden="true"><rect class="b1" x="10" y="18" width="90" height="28" rx="14" fill="#F6F0E4"/><rect class="b2" x="42" y="54" width="58" height="28" rx="14" fill="#D4F25A"/></svg></div><figcaption><b>Two-bar die-cut</b><br>Die-cut of the mark in Lime on Plum border. The default giveaway; fits laptops, MetroCards, bike frames.</figcaption></figure><figure class="stk"><div class="st pill" style="background:#F6F0E4;color:#1C1230"><small>I rhyme with</small><b>__________</b></div><figcaption><b>Rhymes with ___</b><br>Blank sticker with a pen: people write what they rhyme with. Event wall of finished lines.</figcaption></figure><figure class="stk"><div class="st round" style="background:#FF6B3D;color:#1C1230"><b>Fit goes<br>both ways.</b><i></i></div><figcaption><b>Fit goes both ways</b><br>Round 3-inch sticker, tagline in Fraunces, bars as underline.</figcaption></figure><figure class="stk"><div class="st pill" style="background:#D4F25A;color:#1C1230"><small>Rhyme team</small><b>Ask me why.</b></div><figcaption><b>Ask me why</b><br>Lanyard / name-tag sticker for team at events. Opens the 'reason for every introduction' conversation.</figcaption></figure><figure class="stk"><div class="st dual"><i style="background:#F6F0E4">Hi.</i><i style="background:#D4F25A">Hi back.</i></div><figcaption><b>Said it back</b><br>Two overlapping chat-bar stickers (Hi / Hi back) that sit on the same right edge when stuck together.</figcaption></figure><figure class="stk"><div class="st round" style="background:#1C1230;color:#F6F0E4;box-shadow:inset 0 0 0 8px #CBC1EE"><b>Same<br>stop.</b></div><figcaption><b>Same stop</b><br>Transit-token round sticker, Plum with Lilac ring. Event giveaway, while supplies last.</figcaption></figure></div>
+<h3 style="font-size:28px;margin:48px 0 0">Event signage</h3>
+<div class="signs"><div class="sg"><b>Pop-up sandwich board</b><p>Plum A-frame: 'Matched both ways.' + QR to waitlist. Two bars chalk-lined on the sidewalk, long and short, ending at the board.</p></div><div class="sg"><b>Table tent: Why you're meeting</b><p>Printed Example cards on every table; guests write their own reason on the back. Always labeled Example.</p></div><div class="sg"><b>Floor decals</b><p>Two bars, one long one short, leading to the check-in desk and ending at the same line. Wayfinding that is the logo.</p></div><div class="sg"><b>Check-in wall</b><p>Lilac wall, Plum Fraunces: 'Different lines. Same stop.' Photo-op with a hand-drawn bar pair.</p></div><div class="sg"><b>Name tags</b><p>Pill-shaped tags in the bar shape; first name + 'rhymes with ___'. Keep to first names only.</p></div><div class="sg"><b>Door sign / window cling</b><p>Cream window cling with 'Rhyme, with reason.' for partner cafes and bookstores (opt-in).</p></div></div></div></section>
+
+<section id="store"><div class="wrap"><span class="lbl">11 / APP STORE SCREENSHOTS</span><h2>One sentence on top, one idea per frame.</h2>
+<p class="lead">Style: a solid brand-colored caption band with a Fraunces headline (max 6 words), the phone below, UI in Paper with one Lime or Tangerine reason chip. No people photos in screenshots; alternate dark, lilac, paper, lime, tangerine so the carousel reads as one rhyme scheme. Mock UI is illustrative, not live product; replace names and reasons with real data post-launch. Native sizes: 1290 x 2796.</p>
+<div class="phs"><figure class="ph"><div class="cap" style="background:#1C1230;color:#F6F0E4"><h5>Matched both ways.</h5><p>You fit them. They fit you.</p></div><div class="scr"><div class="notch"></div><div class="ui"><div class="uic"><div class="ph-img"><i></i><i></i></div><b>Sam, 29</b><span>Brooklyn. Both of you want Sunday plans.</span></div><div class="btn">Say yes</div></div></div></figure><figure class="ph"><div class="cap" style="background:#CBC1EE;color:#1C1230"><h5>Every introduction has a reason.</h5><p>Not a feeling. A sentence.</p></div><div class="scr"><div class="notch"></div><div class="ui"><div class="uic"><div class="ph-img"><i></i><i></i></div><b>Jo, 31</b><span>Lower East Side</span><div class="why"><small>Why you're meeting</small><span>You both read on the train and cook on Sundays.</span></div></div><div class="btn">See why</div></div></div></figure><figure class="ph"><div class="cap" style="background:#F6F0E4;color:#1C1230"><h5>Say what you want. See what they want.</h5><p>Both sides considered first.</p></div><div class="scr"><div class="notch"></div><div class="ui"><div class="two"><div><small>You want</small><i style="width:80%"></i><i style="width:55%"></i></div><div><small>They want</small><i style="width:80%"></i><i style="width:55%"></i></div></div><div class="btn">Check the fit</div></div></div></figure><figure class="ph"><div class="cap" style="background:#D4F25A;color:#1C1230"><h5>Fewer introductions.</h5><p>Each one explained.</p></div><div class="scr"><div class="notch"></div><div class="ui"><div class="li"><b>Alex</b><span>Because: same weekends</span></div><div class="li"><b>Dani</b><span>Because: same plans</span></div><div class="li"><b>Kai</b><span>Because: same pace</span></div></div></div></figure><figure class="ph"><div class="cap" style="background:#FF6B3D;color:#1C1230"><h5>Nobody pays to be seen.</h5><p>No ads. No data sale.</p></div><div class="scr"><div class="notch"></div><div class="ui"><div class="bigbars"><svg class="mk" viewBox="0 0 120 100" aria-hidden="true"><rect class="b1" x="10" y="18" width="90" height="28" rx="14" fill="#F6F0E4"/><rect class="b2" x="42" y="54" width="58" height="28" rx="14" fill="#D4F25A"/></svg></div><div class="btn">Join the NYC founding pool</div></div></div></figure></div>
+<p class="cap">App Store title: Rhyme: Matched Both Ways. Subtitle: Fit goes both ways.</p></div></section>
+
+<footer><div class="wrap"><img src="logo/lockup-dark.svg" alt="Rhyme" style="height:40px"><p>Brand Team 2. Direction: RENAME. Knockout searches are not legal clearance; see NOTES.md for risks and next steps. Not deployed.</p></div></footer>
+</body></html>

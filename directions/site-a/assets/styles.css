@@ -1,0 +1,1044 @@
+/*
+  Halves site styles.
+  Plain CSS, no build step. Sections:
+  1. Fonts (self-hosted, see assets/fonts/ and the OFL license files there)
+  2. Design tokens (light and dark)
+  3. Base and layout
+  4. Header and footer
+  5. Landing page sections
+  6. Waitlist form and success state
+  7. Simple pages (privacy, 404)
+  8. Motion
+*/
+
+/* 1. Fonts: latin subsets only, from Fontsource (OFL 1.1). They live with the rest of the brand in brand/fonts/. */
+@font-face {
+  font-family: "Gabarito";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("brand/fonts/gabarito-latin-700-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Gabarito";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("brand/fonts/gabarito-latin-800-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Onest";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("brand/fonts/onest-latin-400-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Onest";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("brand/fonts/onest-latin-600-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* 2. Design tokens. The brand guide is assets/brand/README.md: two rings, and the coral
+   middle where they meet is the match. Indigo carries the text and buttons. Coral and
+   periwinkle are for graphics and tints, since plain coral is under 4.5:1 for text on lilac. */
+:root {
+  color-scheme: light dark;
+
+  --bg: #F3F1FB;               /* lilac */
+  --surface: #FFFFFF;
+  --sunk: #E8E5F7;
+  --ink: #23205A;              /* indigo */
+  --muted: #5B5880;            /* 5.9:1 on bg */
+  --line: #DAD6F0;
+  --primary: #23205A;          /* buttons */
+  --primary-hover: #34307F;
+  --on-primary: #FFFFFF;       /* 14:1 on primary */
+  --coral-text: #C4391F;       /* coral when it is text: 4.8:1 on bg */
+  --coral: #F05D43;            /* coral as a graphic: the hero's overlap */
+  --coral-soft: #FDE4DE;
+  --periwinkle-soft: #E6E4FB;
+  --error: #B4232F;
+  --success: #1E7A44;
+
+  /* Derived tokens */
+  --field-bg: #FFFFFF;
+  --field-line: #8A86B3;       /* input borders: 3.4:1 on white, meets non-text contrast */
+  --link: #4A43C9;             /* 6.4:1 on bg, 7:1 on white */
+  --focus: var(--link);
+
+  --font-head: "Gabarito", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Onest", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  --max: 1120px;
+  --gutter: 16px;
+  --radius-sm: 12px;
+  --radius: 24px;
+  --section-space: clamp(3.5rem, 2rem + 6vw, 7rem);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #15133A;             /* night */
+    --surface: #1D1A4A;
+    --sunk: #27245C;
+    --ink: #F3F1FB;
+    --muted: #ABA8D6;          /* 7:1 on surface */
+    --line: #34306B;
+    --primary: #A9A6F2;        /* periwinkle */
+    --primary-hover: #BDBAF6;
+    --on-primary: #15133A;     /* 8:1 on primary */
+    --coral-text: #FF8A72;
+    --coral: #F26A51;
+    --coral-soft: #3A2240;
+    --periwinkle-soft: #262361;
+    --error: #FF7A84;
+    --success: #5BCB8A;
+
+    --field-bg: #15133A;
+    --field-line: #7E7AB8;     /* 4:1 or better on dark surfaces */
+    --link: #B9B6FF;
+  }
+}
+
+@media (min-width: 640px) {
+  :root { --gutter: 24px; }
+}
+@media (min-width: 1024px) {
+  :root { --gutter: 32px; }
+}
+
+/* 3. Base and layout */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  overflow-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (min-width: 640px) {
+  body { font-size: 1.0625rem; }
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-head);
+  color: var(--ink);
+  margin: 0;
+  text-wrap: balance;
+}
+
+h1 {
+  font-weight: 800;
+  font-size: clamp(2.5rem, 1.5rem + 4.6vw, 4.5rem);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+}
+
+h2 {
+  font-weight: 800;
+  font-size: clamp(1.75rem, 1.35rem + 1.8vw, 2.5rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+h3 {
+  font-weight: 700;
+  font-size: 1.3125rem;
+  line-height: 1.25;
+  letter-spacing: -0.005em;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: var(--link);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+  text-decoration-skip-ink: none;  /* one unbroken line, not gaps around the tails of letters like y and g */
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+.wrap {
+  width: min(var(--max), 100% - 2 * var(--gutter));
+  margin-inline: auto;
+}
+
+.section {
+  padding-block: var(--section-space);
+}
+
+.section-intro {
+  max-width: 36rem;
+  margin-top: 0.75rem;
+  color: var(--muted);
+}
+
+.skip-link {
+  position: absolute;
+  left: var(--gutter);
+  top: -100px;
+  z-index: 10;
+  padding: 0.75rem 1rem;
+  background: var(--surface);
+  color: var(--ink);
+  font-weight: 600;
+  border: 2px solid var(--focus);
+  border-radius: var(--radius-sm);
+}
+
+.skip-link:focus {
+  top: 12px;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Buttons */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 52px;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid transparent;
+  border-radius: 999px;
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  font-weight: 600;
+  line-height: 1.2;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button-primary {
+  background: var(--primary);
+  color: var(--on-primary);
+}
+
+.button-primary:hover {
+  background: var(--primary-hover);
+}
+
+.button-primary:active {
+  transform: translateY(1px);
+}
+
+.button-primary:disabled {
+  opacity: 0.7;
+  cursor: progress;
+  transform: none;
+}
+
+.button-quiet {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--field-line);
+}
+
+.button-quiet:hover {
+  border-color: var(--ink);
+}
+
+.button-small {
+  min-height: 44px;
+  padding: 0.5rem 1.125rem;
+  font-size: 0.9375rem;
+}
+
+/* 4. Header and footer */
+.site-header {
+  padding-block: 14px;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+/* The logo is an image from assets/brand/logo/. Each page's <picture> swaps in the
+   on-dark file in dark mode. Its height sets its size. */
+.brand-logo {
+  width: auto;
+  height: 30px;
+}
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding-block: 2.5rem 3rem;
+  color: var(--muted);
+  font-size: 0.9375rem;
+}
+
+.footer-inner {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer-links a {
+  display: inline-block;
+  padding-block: 0.375rem;
+}
+
+.brand-small .brand-logo {
+  height: 26px;
+}
+
+@media (min-width: 760px) {
+  .footer-inner {
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 2rem;
+  }
+  .footer-links {
+    justify-content: flex-end;
+  }
+}
+
+/* 5. Landing page sections */
+
+/* Hero */
+.hero {
+  padding-block: clamp(1.5rem, 0.5rem + 4vw, 4.5rem) var(--section-space);
+}
+
+.hero-grid {
+  display: grid;
+  gap: 1.75rem;
+  align-items: center;
+}
+
+/* On phones the picture comes after the headline and button, so they stay on the first screen. */
+.hero-art {
+  width: min(100%, 31rem);
+}
+
+/* The match story: two people with their priority chips (rows from 1.5rem to about 11.2rem),
+   then "Common ground" in its own row so it never covers the chips at any width, then the
+   rings, anchored to the bottom. */
+.match-story {
+  position: relative;
+  min-height: 25.25rem;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.match-person {
+  position: absolute;
+  top: 1.5rem;
+  display: grid;
+  width: 9rem;
+  justify-items: center;
+  gap: 0.45rem;
+  z-index: 3;
+}
+
+.match-person--left { left: 0; }
+.match-person--right { right: 0; }
+
+.match-avatar {
+  display: grid;
+  place-items: center;
+  width: 3.25rem;
+  height: 3.25rem;
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--ink);
+  font-family: var(--font-head);
+  font-size: 1rem;
+  font-weight: 800;
+  box-shadow: 0 0.5rem 1.5rem rgba(35, 32, 90, 0.08);
+}
+
+.match-priority {
+  display: inline-flex;
+  min-height: 1.7rem;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem 0.65rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+  box-shadow: 0 0.4rem 1rem rgba(35, 32, 90, 0.06);
+}
+
+.common-ground {
+  position: absolute;
+  left: 50%;
+  top: 11.8rem;
+  display: grid;
+  width: 11rem;
+  translate: -50% 0;
+  justify-items: center;
+  gap: 0.25rem;
+  text-align: center;
+  z-index: 4;
+}
+
+.common-ground span {
+  color: var(--coral-text);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.common-ground strong {
+  color: var(--ink);
+  font-size: 0.9rem;
+}
+
+.match-mark {
+  position: absolute;
+  left: 50%;
+  bottom: 1.25rem;
+  width: 15rem;
+  height: 9rem;
+  translate: -50% 0;
+}
+
+.match-ring,
+.match-overlap {
+  position: absolute;
+  top: 0;
+  width: 9rem;
+  height: 9rem;
+}
+
+.match-ring {
+  border: 0.7rem solid var(--ink);
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.match-ring--left { left: 0; }
+.match-ring--right { right: 0; }
+
+.match-overlap {
+  left: 50%;
+  width: 3rem;                 /* the rings' overlap: 9rem rings 6rem apart */
+  height: 5.9rem;
+  top: 1.55rem;
+  translate: -50% 0;
+  clip-path: polygon(50% 0%, 68% 7%, 84% 21%, 96% 39%, 100% 50%, 96% 61%, 84% 79%, 68% 93%, 50% 100%, 32% 93%, 16% 79%, 4% 61%, 0% 50%, 4% 39%, 16% 21%, 32% 7%);
+  background: var(--coral);
+  opacity: 1;
+  transform-origin: center;
+  filter: drop-shadow(0 0.5rem 1.1rem rgba(240, 93, 67, 0.22));
+  z-index: 1;
+}
+
+.hero-copy {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.hero-sub {
+  max-width: 34rem;
+  font-size: clamp(1.125rem, 1rem + 0.5vw, 1.3125rem);
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.25rem;
+  margin-top: 0.5rem;
+}
+
+@media (min-width: 860px) {
+  .hero-grid {
+    grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+    gap: 3rem;
+  }
+  .hero-art {
+    width: min(100%, 31rem);
+    justify-self: center;
+  }
+}
+
+/* How it works: a real sequence, so the steps are numbered. */
+.step-list {
+  display: grid;
+  gap: 2rem;
+  margin: 2.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.step {
+  display: grid;
+  gap: 0.5rem;
+  align-content: start;
+  padding-top: 1.25rem;
+  border-top: 2px solid var(--line);
+}
+
+.step-number {
+  font-family: var(--font-head);
+  font-weight: 800;
+  font-size: 2.25rem;
+  line-height: 1;
+  color: var(--coral-text);
+  margin-bottom: 0.5rem;
+}
+
+.step p {
+  color: var(--muted);
+  max-width: 30rem;
+}
+
+@media (min-width: 760px) {
+  .step-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2.5rem;
+  }
+}
+
+/* Why Halves is different: two differences, side by side like the two rings of the mark. */
+.differences {
+  background: var(--surface);
+  border-block: 1px solid var(--line);
+}
+
+.pair {
+  display: grid;
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+
+.pair-half {
+  display: grid;
+  gap: 0.75rem;
+  align-content: start;
+  padding: clamp(1.75rem, 1rem + 2.5vw, 3rem);
+  border-radius: var(--radius);
+  color: var(--ink);
+}
+
+.pair-half p {
+  max-width: 28rem;
+}
+
+.pair-half h3 {
+  font-weight: 700;
+  font-size: clamp(1.375rem, 1.1rem + 1vw, 1.75rem);
+  letter-spacing: -0.015em;
+}
+
+.pair-half--left {
+  background: var(--periwinkle-soft);
+}
+
+.pair-half--right {
+  background: var(--coral-soft);
+}
+
+@media (min-width: 760px) {
+  .pair {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* 6. Waitlist form and success state */
+.join-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.join-copy {
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+}
+
+.join-copy p {
+  max-width: 30rem;
+  color: var(--muted);
+}
+
+@media (min-width: 900px) {
+  .join-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+    gap: 4rem;
+  }
+}
+
+.join-panel {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: clamp(1.25rem, 0.75rem + 2.5vw, 2.5rem);
+}
+
+.waitlist-form {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.field {
+  display: grid;
+  gap: 0.375rem;
+  align-content: start;
+  min-width: 0;
+}
+
+.field label,
+.optional-group legend {
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.field-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 1rem;
+}
+
+/* First and last name stack on narrow phones, so a long name still fits its box. */
+.field-row--names {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+@media (min-width: 480px) {
+  .field-row--names {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+}
+
+.optional-group {
+  display: grid;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  min-inline-size: 0;
+}
+
+.optional-group legend {
+  padding: 0;
+  margin-bottom: 0.25rem;
+}
+
+.optional-tag {
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.hint {
+  color: var(--muted);
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
+.text-input {
+  width: 100%;
+  min-height: 48px;
+  padding: 0.625rem 0.875rem;
+  border: 1px solid var(--field-line);
+  border-radius: var(--radius-sm);
+  background: var(--field-bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1rem;   /* 16px keeps iOS from zooming on focus */
+  line-height: 1.4;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+}
+
+.text-input::-webkit-outer-spin-button,
+.text-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.text-input:hover {
+  border-color: var(--ink);
+}
+
+.text-input:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 1px;
+  border-color: var(--focus);
+  border-radius: var(--radius-sm);
+}
+
+.text-input[aria-invalid="true"] {
+  border-color: var(--error);
+  box-shadow: inset 0 0 0 1px var(--error);
+}
+
+.field-error {
+  color: var(--error);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.field-error:empty {
+  display: none;
+}
+
+.consent {
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr);
+  column-gap: 0.75rem;
+  row-gap: 0.375rem;
+  align-items: start;
+}
+
+.consent input {
+  width: 22px;
+  height: 22px;
+  margin: 2px 0 0;
+  accent-color: var(--primary);
+  cursor: pointer;
+}
+
+.consent label {
+  font-weight: 400;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.consent .field-error {
+  grid-column: 2;
+}
+
+/* Honeypot: off screen but not display:none, so naive bots still fill it. */
+.hp-field {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.waitlist-form .button-primary {
+  width: 100%;
+}
+
+.form-status {
+  margin-top: 1rem;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.form-status:empty {
+  display: none;
+}
+
+.form-status[data-tone="error"] {
+  color: var(--error);
+}
+
+.noscript-note {
+  margin-bottom: 1.25rem;
+  padding: 0.875rem 1rem;
+  border-radius: var(--radius-sm);
+  background: var(--sunk);
+  color: var(--ink);
+}
+
+.join-success {
+  display: grid;
+  gap: 1rem;
+}
+
+.join-success h3 {
+  font-weight: 700;
+  font-size: clamp(1.5rem, 1.2rem + 1vw, 1.875rem);
+  letter-spacing: -0.015em;
+}
+
+.join-success h3:focus {
+  outline: none;
+}
+
+.join-success h3:focus-visible {
+  outline: 3px solid var(--focus);
+}
+
+.success-mark {
+  width: 56px;
+  height: auto;
+}
+
+.share-row {
+  display: grid;
+  gap: 0.75rem;
+}
+
+@media (min-width: 480px) {
+  .share-row {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+  }
+}
+
+.share-status {
+  color: var(--success);
+  font-weight: 600;
+}
+
+.share-status:empty {
+  display: none;
+}
+
+/* 7. Simple pages (privacy notice, 404) */
+.page {
+  padding-block: clamp(2rem, 1rem + 4vw, 4.5rem) var(--section-space);
+}
+
+.prose {
+  max-width: 42rem;
+}
+
+.prose h1 {
+  font-size: clamp(2.25rem, 1.6rem + 3vw, 3.25rem);
+}
+
+.prose h2 {
+  font-size: clamp(1.375rem, 1.2rem + 0.8vw, 1.75rem);
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.prose p + p {
+  margin-top: 1rem;
+}
+
+.prose ul {
+  margin: 0.75rem 0 0;
+  padding-left: 1.25rem;
+}
+
+.prose li + li {
+  margin-top: 0.5rem;
+}
+
+.prose .lede {
+  margin-top: 1rem;
+  font-size: clamp(1.125rem, 1rem + 0.5vw, 1.25rem);
+  color: var(--muted);
+}
+
+.prose .updated {
+  margin-top: 0.75rem;
+  color: var(--muted);
+  font-size: 0.9375rem;
+}
+
+.not-found {
+  display: grid;
+  gap: 1.25rem;
+  justify-items: start;
+  max-width: 36rem;
+}
+
+.not-found p {
+  color: var(--muted);
+}
+
+/* 8. Motion: two people arrive with different priorities. Shared priorities move toward
+   the center, then the Halves rings are pulled together by that common ground.
+   It plays once and holds on the matched picture: every animation runs 6.5s with fill
+   "both", and the last movement ends at 77% (5 seconds), so nothing moves after that
+   (WCAG 2.2.2 asks for a pause control on motion longer than 5 seconds). */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  .match-person--left {
+    animation: person-arrive-left 6.5s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  }
+
+  .match-person--right {
+    animation: person-arrive-right 6.5s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  }
+
+  .match-priority--left-one,
+  .match-priority--left-two {
+    animation: shared-priority-left 6.5s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  }
+
+  .match-priority--right-two,
+  .match-priority--right-three {
+    animation: shared-priority-right 6.5s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  }
+
+  .match-priority--left-three,
+  .match-priority--right-one {
+    animation: individual-priority 6.5s ease both;
+  }
+
+  .common-ground {
+    animation: common-ground 6.5s ease both;
+  }
+
+  .match-ring--left {
+    animation: ring-attract-left 6.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  .match-ring--right {
+    animation: ring-attract-right 6.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  .match-overlap {
+    animation: overlap-reveal 6.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+}
+
+@keyframes person-arrive-left {
+  0%, 8% { opacity: 0; translate: -3rem 0; }
+  18%, 100% { opacity: 1; translate: 0 0; }
+}
+
+@keyframes person-arrive-right {
+  0%, 8% { opacity: 0; translate: 3rem 0; }
+  18%, 100% { opacity: 1; translate: 0 0; }
+}
+
+@keyframes shared-priority-left {
+  0%, 22% { opacity: 0; translate: -0.75rem 0; }
+  30%, 42% { opacity: 1; translate: 0 0; }
+  52% { opacity: 1; translate: 2.4rem 1.25rem; }
+  60%, 100% { opacity: 0; translate: 3.8rem 2rem; }
+}
+
+@keyframes shared-priority-right {
+  0%, 26% { opacity: 0; translate: 0.75rem 0; }
+  34%, 44% { opacity: 1; translate: 0 0; }
+  54% { opacity: 1; translate: -2.4rem 1.25rem; }
+  62%, 100% { opacity: 0; translate: -3.8rem 2rem; }
+}
+
+@keyframes individual-priority {
+  0%, 30% { opacity: 0; }
+  38%, 52% { opacity: 1; }
+  62%, 100% { opacity: 0.35; }
+}
+
+@keyframes common-ground {
+  0%, 56% { opacity: 0; scale: 0.94; }
+  62%, 100% { opacity: 1; scale: 1; }
+}
+
+@keyframes ring-attract-left {
+  0%, 51% { translate: -2.2rem 0; }
+  64%, 100% { translate: 0 0; }
+}
+
+@keyframes ring-attract-right {
+  0%, 51% { translate: 2.2rem 0; }
+  64%, 100% { translate: 0 0; }
+}
+
+@keyframes overlap-reveal {
+  0%, 60% { opacity: 0; scale: 0.08 0.25; }
+  66% { opacity: 1; scale: 1; }
+  72% { opacity: 1; scale: 1.08; }
+  77%, 100% { opacity: 1; scale: 1; }
+}
+
+@media (max-width: 480px) {
+  .match-story { min-height: 24rem; }
+  .match-person { width: 7.5rem; }
+  .match-mark { width: 13rem; height: 7.75rem; }
+  .match-ring { width: 7.75rem; height: 7.75rem; }
+  .match-overlap { width: 2.5rem; height: 5rem; top: 1.375rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
