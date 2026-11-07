@@ -362,3 +362,85 @@ html { scroll-behavior: auto; }
   .hero-actions { margin-top: 1.25rem; }
   .hero-actions .button { min-height: 48px; }
 }
+
+/* ===== Neutral pass: paper/near-black surfaces, one coral accent, roomier phone ===== */
+:root {
+  --phone-frame: #111111; --phone-ring: #3A3835; --screen: #FFFFFF; --card: #F4F1EC;
+  --chip-on-bg: #1C1B1A; --chip-on-fg: #FFFFFF;
+  --shadow-lg: 0 40px 80px -34px rgba(28,27,26,.45), 0 16px 32px -20px rgba(28,27,26,.28);
+  --shadow-sm: 0 1px 2px rgba(28,27,26,.05), 0 6px 16px -10px rgba(28,27,26,.14);
+  --grid-dot: rgba(28,27,26,.12);
+  --band-bg: #1C1B1A; --band-fg: #FAF8F5;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --phone-frame: #050505; --phone-ring: #4A4743; --screen: #1A1A1A; --card: #262626;
+    --chip-on-bg: #F2F0EC; --chip-on-fg: #121212;
+    --shadow-lg: 0 40px 80px -34px rgba(0,0,0,.8), 0 16px 32px -20px rgba(0,0,0,.7);
+    --shadow-sm: 0 1px 2px rgba(0,0,0,.4);
+    --grid-dot: rgba(242,240,236,.13);
+    --band-bg: #1F1F1F; --band-fg: #F2F0EC;
+  }
+}
+.button-primary { box-shadow: none; }
+.button-quiet { background: transparent; }
+.step-number { background: var(--ink); color: var(--bg); }
+.contrast-col--us { background: var(--band-bg); border-color: var(--band-bg); color: var(--band-fg); }
+.contrast-col--us .contrast-q { color: var(--band-fg); }
+.promise { background: var(--band-bg); color: var(--band-fg); }
+.promise h2 { color: var(--band-fg); }
+.promise .kicker { color: color-mix(in srgb, var(--band-fg) 70%, transparent); }
+.promise-list li { border-color: color-mix(in srgb, var(--band-fg) 22%, transparent); }
+.mini-steps b, .kick-n { background: var(--sunk); }
+.tag { background: var(--sunk); }
+.join, .promise-line, .screens-sec { background: var(--surface); }
+.site-header { background: color-mix(in srgb, var(--bg) 85%, transparent); }
+.mini-steps { margin-top: 2.5rem; }
+.hero-actions { margin-top: 2rem; }
+.hero-note { margin-top: 1.25rem; }
+.section h2 { margin-bottom: 0; }
+.kicker { margin-bottom: 1rem; }
+
+/* Phone: more air everywhere */
+.phone { height: 45em; }
+@media (min-width: 900px) { .device .phone { font-size: clamp(13px, calc((100svh - 235px) / 45), 16px); } }
+.app-body { padding: 1.25em 1.5em 1.75em; gap: 1.25em; }
+.app-kicker { margin-bottom: .25em; }
+.app-title { font-size: 1.625em; line-height: 1.12; }
+.app-sub { line-height: 1.5; }
+.chips { gap: .75em; }
+.chip { min-height: max(2.75em, 40px); padding: 0 1.125em; }
+span.chip { min-height: 2.5em; padding: 0 1em; }
+.firm-row { padding: 1.125em 1.25em; margin-top: .5em; gap: 1.25em; border-radius: 1.125em; }
+.firm-row span:not(.switch) { margin-top: .25em; }
+.switch { width: 3.25em; height: 2em; }
+.switch i { width: 1.5em; height: 1.5em; top: .1875em; left: .1875em; }
+.switch[aria-checked="true"] i, .switch.is-on i { translate: 1.25em 0; }
+.app-btn { min-height: max(3.25em, 48px); padding: .75em 1.25em; }
+.app-link { min-height: 44px; }
+.app-actions { gap: .5em; padding-top: .5em; }
+.intro { gap: 1.25em; }
+.who { gap: 1em; }
+.avatar { background: var(--sunk); }
+.fits { margin: 0; gap: .5em; display: flex; flex-direction: row; align-items: center; }
+.fits { font-size: .8125em; font-weight: 600; gap: .625em; }
+.why { padding: 1.25em; background: var(--card); border: 1px solid var(--line); border-left: 3px solid var(--coral); border-radius: 1.125em; }
+.why-head { margin-top: .75em; font-size: 1.125em; line-height: 1.25; }
+.why dl { margin-top: 1.25em; gap: 1em; }
+.why dd { margin-top: .25em; line-height: 1.5; }
+.firm-ok { gap: .625em; }
+.thanks { gap: 1em; padding-top: 2em; }
+.duo { gap: .75em; }
+.duo > div:not(.duo-mark) { gap: .5em; }
+.screen-static .app-body { padding-top: 1em; }
+.phone--sm { font-size: 13px; height: 47em; }
+.phone--sm .app-body { padding-top: 1em; }
+.demo-controls { margin-top: .5rem; }
+.device { gap: 1rem; }
+.seg button { min-height: 40px; padding: 0 1rem; }
+.ic { background: var(--coral); color: #1C1B1A; }
+@media (prefers-color-scheme: dark) { .why { background: var(--card); } }
+@media (max-width: 899px) { .device .phone { font-size: 16px; } }
+@media (max-width: 380px) { .device .phone { font-size: 15px; } }
+.mk-l { fill: #23205A; } .mk-r { fill: #7D79E0; } .mk-x { fill: #F05D43; }
+@media (prefers-color-scheme: dark) { .mk-l { fill: #F3F1FB; } .mk-r { fill: #A9A6F2; } .mk-x { fill: #F26A51; } }

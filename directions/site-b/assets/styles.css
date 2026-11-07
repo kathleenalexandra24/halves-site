@@ -51,26 +51,26 @@
 :root {
   color-scheme: light dark;
 
-  --bg: #F3F1FB;               /* lilac */
+  --bg: #FAF8F5;               /* lilac */
   --surface: #FFFFFF;
-  --sunk: #E8E5F7;
-  --ink: #23205A;              /* indigo */
-  --muted: #5B5880;            /* 5.9:1 on bg */
-  --line: #DAD6F0;
-  --primary: #23205A;          /* buttons */
-  --primary-hover: #34307F;
+  --sunk: #F0EDE8;
+  --ink: #1C1B1A;              /* indigo */
+  --muted: #5E5A54;            /* 5.9:1 on bg */
+  --line: #E5E1DA;
+  --primary: #C4391F;          /* buttons */
+  --primary-hover: #A92F18;
   --on-primary: #FFFFFF;       /* 14:1 on primary */
-  --coral-text: #C4391F;       /* coral when it is text: 4.8:1 on bg */
+  --coral-text: #B5341B;       /* coral when it is text: 4.8:1 on bg */
   --coral: #F05D43;            /* coral as a graphic: the hero's overlap */
-  --coral-soft: #FDE4DE;
-  --periwinkle-soft: #E6E4FB;
+  --coral-soft: #FBEDE9;
+  --periwinkle-soft: #EFEBE4;
   --error: #B4232F;
   --success: #1E7A44;
 
   /* Derived tokens */
   --field-bg: #FFFFFF;
-  --field-line: #8A86B3;       /* input borders: 3.4:1 on white, meets non-text contrast */
-  --link: #4A43C9;             /* 6.4:1 on bg, 7:1 on white */
+  --field-line: #8C877F;       /* input borders: 3.4:1 on white, meets non-text contrast */
+  --link: #B5341B;             /* 6.4:1 on bg, 7:1 on white */
   --focus: var(--link);
 
   --font-head: "Gabarito", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -85,25 +85,25 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #15133A;             /* night */
-    --surface: #1D1A4A;
-    --sunk: #27245C;
-    --ink: #F3F1FB;
-    --muted: #ABA8D6;          /* 7:1 on surface */
-    --line: #34306B;
-    --primary: #A9A6F2;        /* periwinkle */
-    --primary-hover: #BDBAF6;
-    --on-primary: #15133A;     /* 8:1 on primary */
+    --bg: #121212;             /* night */
+    --surface: #1A1A1A;
+    --sunk: #242424;
+    --ink: #F2F0EC;
+    --muted: #AAA59D;          /* 7:1 on surface */
+    --line: #2E2E2E;
+    --primary: #F26A51;        /* periwinkle */
+    --primary-hover: #FF8068;
+    --on-primary: #190D0A;     /* 8:1 on primary */
     --coral-text: #FF8A72;
     --coral: #F26A51;
-    --coral-soft: #3A2240;
-    --periwinkle-soft: #262361;
+    --coral-soft: #2A1F1C;
+    --periwinkle-soft: #2A2A2A;
     --error: #FF7A84;
     --success: #5BCB8A;
 
-    --field-bg: #15133A;
-    --field-line: #7E7AB8;     /* 4:1 or better on dark surfaces */
-    --link: #B9B6FF;
+    --field-bg: #121212;
+    --field-line: #8A857D;     /* 4:1 or better on dark surfaces */
+    --link: #FF9A85;
   }
 }
 

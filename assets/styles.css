@@ -51,26 +51,26 @@
 :root {
   color-scheme: light dark;
 
-  --bg: #F3F1FB;               /* lilac */
+  --bg: #F5F3EF;               /* lilac */
   --surface: #FFFFFF;
-  --sunk: #E8E5F7;
+  --sunk: #ECE9E3;
   --ink: #23205A;              /* indigo */
-  --muted: #5B5880;            /* 5.9:1 on bg */
-  --line: #DAD6F0;
+  --muted: #5E5C57;            /* 5.9:1 on bg */
+  --line: #DEDAD2;
   --primary: #23205A;          /* buttons */
   --primary-hover: #34307F;
   --on-primary: #FFFFFF;       /* 14:1 on primary */
   --coral-text: #C4391F;       /* coral when it is text: 4.8:1 on bg */
   --coral: #F05D43;            /* coral as a graphic: the hero's overlap */
   --coral-soft: #FDE4DE;
-  --periwinkle-soft: #E6E4FB;
+  --periwinkle-soft: #ECE9E3;
   --error: #B4232F;
   --success: #1E7A44;
 
   /* Derived tokens */
   --field-bg: #FFFFFF;
   --field-line: #8A86B3;       /* input borders: 3.4:1 on white, meets non-text contrast */
-  --link: #4A43C9;             /* 6.4:1 on bg, 7:1 on white */
+  --link: #2F3FC4;             /* 6.4:1 on bg, 7:1 on white */
   --focus: var(--link);
 
   --font-head: "Gabarito", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -85,25 +85,25 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #15133A;             /* night */
-    --surface: #1D1A4A;
-    --sunk: #27245C;
-    --ink: #F3F1FB;
-    --muted: #ABA8D6;          /* 7:1 on surface */
-    --line: #34306B;
-    --primary: #A9A6F2;        /* periwinkle */
-    --primary-hover: #BDBAF6;
-    --on-primary: #15133A;     /* 8:1 on primary */
+    --bg: #0E0E10;             /* night */
+    --surface: #17171A;
+    --sunk: #202024;
+    --ink: #F2EFE8;
+    --muted: #A7A6AE;          /* 7:1 on surface */
+    --line: #2C2C32;
+    --primary: #F2EFE8;        /* periwinkle */
+    --primary-hover: #FFFFFF;
+    --on-primary: #0E0E10;     /* 8:1 on primary */
     --coral-text: #FF8A72;
     --coral: #F26A51;
-    --coral-soft: #3A2240;
-    --periwinkle-soft: #262361;
+    --coral-soft: #2E2220;
+    --periwinkle-soft: #202024;
     --error: #FF7A84;
     --success: #5BCB8A;
 
-    --field-bg: #15133A;
-    --field-line: #7E7AB8;     /* 4:1 or better on dark surfaces */
-    --link: #B9B6FF;
+    --field-bg: #0E0E10;
+    --field-line: #77757C;     /* 4:1 or better on dark surfaces */
+    --link: #C8D0FF;
   }
 }
 

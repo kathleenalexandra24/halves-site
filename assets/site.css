@@ -118,3 +118,14 @@
 .stage { padding-top: clamp(2.4rem, 2rem + 1vw, 2.9rem); }
 .replay { top: 0.45rem; }
 @media (max-width: 520px) { .replay { top: 0.45rem; bottom: auto; } .why-card { margin-bottom: 0; } }
+
+/* Visual pass: neutral surfaces, calmer phone UI spacing */
+.chips { gap: 0.8rem; }
+.chip { padding: 0.55rem 1.05rem; }
+.person { gap: 1.1rem; }
+.stage { padding: clamp(1.75rem, 1rem + 2.5vw, 2.5rem); padding-top: clamp(2.8rem, 2.4rem + 1vw, 3.2rem); }
+.stage-people { gap: 0.75rem; margin-bottom: clamp(1.25rem, 1rem + 1vw, 2rem); }
+.why-card { padding: 1.25rem 1.4rem; margin-top: 0; }
+.why-line { margin-top: 0.6rem; } .why-sub { margin-top: 0.6rem; }
+.contrast-col, .promise-list li, .example-card { padding: clamp(1.5rem, 1rem + 1.5vw, 2.25rem); }
+.example-list { gap: 1rem; } .example-list li { padding: 1rem 1.15rem; }

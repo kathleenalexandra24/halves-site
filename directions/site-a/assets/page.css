@@ -256,3 +256,78 @@ html:not(.js) .screen:first-child { opacity: 1; transform: none; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+
+/* ===== Visual pass: neutral surfaces, one coral accent, roomier phone UI ===== */
+:root {
+  --bg: #FAF8F5; --surface: #FFFFFF; --sunk: #F2EFEA; --ink: #1B1B1A; --muted: #5E5A54; --line: #E5E1DA;
+  --primary: #C4391F; --primary-hover: #A92F18; --on-primary: #FFFFFF;
+  --coral-text: #B8341B; --coral-soft: #FBEAE5; --periwinkle-soft: #EEEAE4;
+  --field-bg: #FFFFFF; --field-line: #8A857D; --link: #B8341B; --focus: #1B1B1A;
+  --screen: #FFFFFF; --card: #F7F5F1; --ring: rgba(27, 27, 26, .12); --lens: rgba(240, 93, 67, .28);
+  --panel: #1B1B1A; --on-panel: #F4F2EE; --panel-muted: #BDB8B0; --panel-accent: #FF9A85;
+  --shadow: 0 50px 90px -30px rgba(0, 0, 0, .35), 0 18px 36px -12px rgba(0, 0, 0, .2);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0E0E0F; --surface: #171718; --sunk: #1C1C1D; --ink: #F4F2EE; --muted: #A9A49C; --line: #2C2C2E;
+    --primary: #F26A51; --primary-hover: #FF8068; --on-primary: #14110F;
+    --coral-text: #FF8A72; --coral-soft: #2B1D1A; --periwinkle-soft: #262626;
+    --field-bg: #0E0E0F; --field-line: #8C877F; --link: #FF8A72; --focus: #F4F2EE;
+    --screen: #161617; --card: #1F1F21; --ring: rgba(244, 242, 238, .14); --lens: rgba(242, 106, 81, .32);
+    --panel: #171718; --shadow: 0 50px 90px -30px rgba(0, 0, 0, .8), 0 18px 36px -12px rgba(0, 0, 0, .6);
+  }
+}
+.button-primary { box-shadow: 0 8px 20px -10px rgba(0, 0, 0, .35); }
+.kicker { color: var(--muted); }
+.promise-panel { border-color: var(--line); }
+.promise-list li { border-bottom-color: rgba(244, 242, 238, .14); }
+.pool-in, .idea { color: var(--ink); }
+.hero h1 { margin-top: 0; }
+.dots button.on span::after { background: var(--ink); }
+.phone { background: #111; box-shadow: inset 0 0 0 .08em #55555a, inset 0 0 0 .22em #222, 0 0 0 .1em #3a3a3e, var(--shadow); }
+.phone::before, .phone::after { background: #3a3a3e; }
+.phone::before { box-shadow: 0 4.6em 0 #3a3a3e; }
+
+/* Phone UI: generous spacing, 44px-class targets, nothing near the edges */
+.scr { padding: 0 1.7em 1.9em; }
+.sb { margin-inline: -.3em; }
+.app-h { margin: 1.4em 0 1.6em; gap: .45em; }
+.app-h.row { margin-bottom: 1.8em; }
+.app-s { color: var(--muted); }
+.app-t { font-size: 1.7em; }
+.prs { gap: 1.1em; }
+.pr { padding: 1.05em 1.05em 1.1em; gap: .85em; border-radius: 1.2em; background: var(--card); border-color: var(--line); }
+.pr-t { font-size: 1em; }
+.seg { padding: .3em; gap: .3em; font-size: .85em; background: var(--sunk); border-radius: .9em; }
+.seg span { padding: .85em 0; border-radius: .7em; }
+.seg .on { background: var(--ink); color: var(--bg); }
+.seg .on.no { background: var(--primary); color: var(--on-primary); }
+.app-foot { padding-top: 1.2em; }
+.btn-m { padding: 1.05em 0; font-size: 1em; background: var(--ink); color: var(--bg); }
+.btn-m.ghost { background: transparent; color: var(--ink); }
+.app-foot.two { gap: .8em; }
+.who { margin-bottom: 1.6em; gap: 1em; }
+.av { background: var(--periwinkle-soft); color: var(--ink); }
+.why { padding: 1.4em 1.3em 1.3em; gap: .7em; border-radius: 1.3em; }
+.why p { line-height: 1.45; }
+.shared { margin-top: 1.8em; gap: .8em; }
+.chips { gap: .6em; }
+.ch { padding: .7em 1.05em; font-size: .9em; }
+.ch.on { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.priv { margin: .5em 0 1.5em; font-size: .9em; }
+.opts { gap: .8em; }
+.opt { padding: 1.1em 1.1em; gap: .9em; background: var(--card); border-radius: 1.1em; }
+.opt.on { border-color: var(--ink); box-shadow: 0 0 0 .12em var(--ink) inset; }
+.opt.on i { border-color: var(--ink); background: radial-gradient(var(--ink) 45%, transparent 50%); }
+.lab { margin: 1.8em 0 .8em; }
+.ints { gap: 1em; }
+.int { padding: 1.05em 1.05em; gap: 1em; background: var(--card); border-radius: 1.2em; }
+.int-t { gap: .3em; }
+.fit i::after { background: var(--coral); }
+.phone-sm { --pw: 250px; }
+.strip-row { --pw: 250px; gap: clamp(2rem, 4vw, 3.5rem); }
+
+/* Section rhythm */
+.section { padding-block: clamp(4.5rem, 2.5rem + 7vw, 8rem); }
+.step-in, .chap-in { max-width: 25rem; }
+.status-table { background: var(--surface); }

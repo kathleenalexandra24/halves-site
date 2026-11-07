@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Halves: Where compatibility works both ways</title>
+  <meta name="description" content="Halves is a dating app for New York that introduces you only when the fit works both ways, with a reason for each. Get early access.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#F2EFE8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0E0E0D" media="(prefers-color-scheme: dark)">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Halves">
+  <meta property="og:title" content="Halves: Where compatibility works both ways">
+  <meta property="og:description" content="A few introductions, each with a reason. No ads. No paid visibility. We never sell your information.">
+  <meta property="og:image" content="assets/brand/social/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="The Halves half-disc mark and wordmark with the line: Where compatibility works both ways.">
+  <!-- LAUNCH CHECKLIST: (1) make og:image an absolute URL (https://meethalves.com/assets/brand/social/og-image.png); (2) remove the noindex robots tag; (3) add <link rel="canonical" href="https://meethalves.com/"> . -->
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/brand/icons/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/brand/icons/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="assets/brand/icons/apple-touch-icon.png">
+  <link rel="preload" href="assets/brand/fonts/hanken-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/site.css">
+  <script>document.documentElement.className += " js";</script>
+  <script src="assets/preview.js"></script>
+  <script src="assets/app.js" defer></script>
+  <script src="assets/proto.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header" id="top">
+    <div class="wrap header-inner">
+      <a class="brand" href="./" aria-label="Halves home"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/brand/logo/halves-lockup-on-dark.svg"><img class="brand-logo" src="assets/brand/logo/halves-lockup.svg" alt="" width="105" height="30"></picture></a>
+      <nav class="head-nav" aria-label="Primary">
+        <a href="#how">How it works</a>
+        <a href="#safety">Safety</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a class="button button-primary button-small" href="#join"><span>Get early access<span class="hide-sm"> to the app</span></span></a>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO: the product is the hero. A working prototype of three real in-app screens. -->
+    <section class="hero" aria-labelledby="headline">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <h1 id="headline">Meet people who fit you, and who you fit, too.</h1>
+          <p class="hero-sub" id="subhead">Halves is a dating app for New York that introduces you only when the fit works both ways, and tells you why.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#join">Get early access to the app</a>
+            <a class="button button-ghost" href="#try">Try it yourself<span aria-hidden="true"> ↓</span></a>
+          </div>
+          <p class="hero-note">For New Yorkers aged 21–39. No ads. We never sell your information.</p>
+          <!-- EDITABLE PLACEHOLDER (platform line): e.g. "iPhone first, coming soon". Confirm with the founders before publishing. Do not add App Store badges until the app is listed. -->
+          <ol class="mini-steps" aria-label="What the demo shows">
+            <li><b>01</b><span>Say what matters, and your firm no</span></li>
+            <li><b>02</b><span>Meet someone, with the reason why</span></li>
+            <li><b>03</b><span>Tell us how the date went</span></li>
+          </ol>
+        </div>
+
+        <div class="device" id="try">
+          <div class="halves-bg" aria-hidden="true"><svg viewBox="0 0 100 100" focusable="false"><path class="bg-l" d="M47 7A36 36 0 0 0 47 79Z"/><path class="bg-r" d="M53 21A36 36 0 0 1 53 93Z"/></svg></div>
+          <p class="demo-label" id="demo-hint">Interactive demo. Tap anything.</p>
+          <div class="demo-controls">
+            <div class="seg" role="group" aria-label="Jump to a screen">
+              <button type="button" data-jump="1" aria-current="step">Priorities</button>
+              <button type="button" data-jump="2">Intro</button>
+              <button type="button" data-jump="3">Feedback</button>
+            </div>
+            <button class="pause" id="pause" type="button"><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><g class="ic-pause"><rect x="3.5" y="2.5" width="3" height="11" rx="1"/><rect x="9.5" y="2.5" width="3" height="11" rx="1"/></g><path class="ic-play" d="M4.5 2.8v10.4L13 8z"/></svg><span id="pause-text">Pause animation</span></button>
+          </div>
+          <div class="phone" id="demo" role="group" aria-label="Halves app demo, three screens">
+            <div class="phone-in">
+              <div class="phone-island" aria-hidden="true"></div>
+              <div class="statusbar" aria-hidden="true"><span>9:41</span><span class="sb-icons"><i></i><i></i><i></i></span></div>
+              <div class="screens">
+
+                <!-- SCREEN 1: priorities -->
+                <section class="screen is-active" data-screen="1" aria-labelledby="s1-title">
+                  <div class="app-body">
+                    <p class="app-kicker"><span class="kick-n">1</span>Your priorities</p>
+                    <h2 class="app-title" id="s1-title" tabindex="-1">What matters most to you?</h2>
+                    <p class="app-sub">Pick up to three. <span class="count" id="pick-count" aria-live="polite">0 of 3</span></p>
+                    <div class="chips" role="group" aria-label="Priorities">
+                    <button class="chip" type="button" aria-pressed="false" data-chip="Kindness">Kindness</button>
+                    <button class="chip" type="button" aria-pressed="false" data-chip="Family">Family</button>
+                    <button class="chip" type="button" aria-pressed="false" data-chip="Curiosity">Curiosity</button>
+                    <button class="chip" type="button" aria-pressed="false" data-chip="Ambition">Ambition</button>
+                    <button class="chip" type="button" aria-pressed="false" data-chip="Quiet nights">Quiet nights</button>
+                    <button class="chip" type="button" aria-pressed="false" data-chip="Adventure">Adventure</button>
+                    <button class="chip" type="button" aria-pressed="false" data-chip="Humor">Humor</button>
+                    <button class="chip" type="button" aria-pressed="false" data-chip="Creativity">Creativity</button>
+                    </div>
+                    <div class="firm-row">
+                      <div id="firm-lbl"><strong>Firm no</strong><span>Never introduce me to someone who smokes</span></div>
+                      <button class="switch" id="firm-switch" type="button" role="switch" aria-checked="false" aria-labelledby="firm-lbl"><i></i></button>
+                    </div>
+                    <button class="app-btn" id="go-intro" type="button" disabled>Pick one to continue</button>
+                  </div>
+                </section>
+
+                <!-- SCREEN 2: introduction -->
+                <section class="screen" data-screen="2" aria-labelledby="s2-title" inert aria-hidden="true">
+                  <div class="app-body">
+                    <p class="app-kicker"><span class="kick-n">2</span>Your introduction</p>
+                    <h2 class="visually-hidden" id="s2-title" tabindex="-1">Your introduction</h2>
+                    <div class="checking" id="checking" role="status">
+                      <svg class="mk mk-anim" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><path class="mk-l" d="M47 7A36 36 0 0 0 47 79Z"/><path class="mk-r" d="M53 21A36 36 0 0 1 53 93Z"/></svg>
+                      <p>Checking both ways…</p>
+                    </div>
+                    <div class="intro" id="intro">
+                      <div class="who r" style="--i:0"><span class="pair-av"><span class="avatar av-you">You</span><span class="avatar av-them" id="i-avatar">J</span></span><div><strong id="i-name">Jordan</strong><span>Example, not a real member</span></div></div>
+                      <div class="why r" style="--i:1">
+                        <span class="why-label"><i></i>Why you’re meeting</span>
+                        <p class="why-head" id="i-head"></p>
+                        <dl>
+                          <div><dt>Why you’d like them</dt><dd id="i-like"></dd></div>
+                          <div><dt>Why they’d like you</dt><dd id="i-liked"></dd></div>
+                        </dl>
+                      </div>
+                      <p class="firm-ok r" id="i-firm" style="--i:2" hidden><svg class="ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Your firm no on smoking is respected.</p>
+                      <div class="app-actions r" style="--i:3">
+                        <button class="app-btn" id="go-feedback" type="button">Skip to after the date</button>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+                <!-- SCREEN 3: feedback -->
+                <section class="screen" data-screen="3" aria-labelledby="s3-title" inert aria-hidden="true">
+                  <div class="app-body">
+                    <p class="app-kicker"><span class="kick-n">3</span>After your date</p>
+                    <div class="fb-form" id="fb-form">
+                      <h2 class="app-title" id="s3-title" tabindex="-1">How did it go with <span id="f-name">Jordan</span>?</h2>
+                      <div class="chips" role="radiogroup" aria-label="How it went">
+                        <button class="chip" type="button" role="radio" aria-checked="false" data-feel="Great">Great</button>
+                        <button class="chip" type="button" role="radio" aria-checked="false" data-feel="Fine">Fine</button>
+                        <button class="chip" type="button" role="radio" aria-checked="false" data-feel="Not for me">Not for me</button>
+                      </div>
+                      <p class="app-sub">Anything else? <span class="muted">Optional</span></p>
+                      <div class="chips" role="group" aria-label="Anything else">
+                        <button class="chip" type="button" aria-pressed="false" data-note="Easy to talk to">Easy to talk to</button>
+                        <button class="chip" type="button" aria-pressed="false" data-note="Different pace">Different pace</button>
+                        <button class="chip" type="button" aria-pressed="false" data-note="Different priorities">Different priorities</button>
+                        <button class="chip" type="button" aria-pressed="false" data-note="No spark">No spark</button>
+                      </div>
+                      <p class="app-note">Private. Only you see this.</p>
+                      <button class="app-btn" id="send-fb" type="button" disabled>Pick how it went</button>
+                    </div>
+                    <div class="thanks" id="fb-done" hidden>
+                      <span class="thanks-mark"><svg class="mk " viewBox="0 0 100 100" aria-hidden="true" focusable="false"><path class="mk-l" d="M47 7A36 36 0 0 0 47 79Z"/><path class="mk-r" d="M53 21A36 36 0 0 1 53 93Z"/></svg></span>
+                      <h2 class="app-title" id="s3-done" tabindex="-1">Thanks. That stays with you.</h2>
+                      <p class="app-sub">Only you see how feedback shapes what comes next. That’s Halves, both ways.</p>
+                      <a class="app-btn" href="#join">Get early access to the app</a>
+                      <button class="app-link" id="replay" type="button">Replay the demo</button>
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="promise-line" aria-label="In one line">
+      <div class="wrap"><p>A few introductions at a time. Each with a reason. Only when the fit works both ways.</p></div>
+    </section>
+
+    <!-- IDEA: the one big typographic moment -->
+    <section class="section idea" aria-labelledby="idea-title">
+      <div class="wrap">
+        <p class="kicker">The idea</p>
+        <h2 class="idea-type" id="idea-title">
+          <span class="it-a">Most apps ask if they fit <em>your</em> list.</span>
+          <span class="it-b">Halves asks if you fit <em>each other’s.</em></span>
+        </h2>
+        <p class="idea-line">If it only fits one side, we don’t introduce you.</p>
+      </div>
+    </section>
+
+    <section class="section steps" id="how" aria-labelledby="how-title">
+      <div class="wrap">
+        <p class="kicker">How it works</p>
+        <h2 id="how-title">Three screens. That’s the whole app.</h2>
+        <ol class="step-list" role="list">
+          <li class="step">
+            <span class="step-number" aria-hidden="true">01</span>
+            <h3>Tell us what matters</h3>
+            <p>Say what you care about, what’s flexible, and what’s a firm no. Takes a few minutes.</p>
+            <button class="try-link" type="button" data-try="1">Try this step <span aria-hidden="true">↑</span></button>
+          </li>
+          <li class="step">
+            <span class="step-number" aria-hidden="true">02</span>
+            <h3>Get introduced, with a reason</h3>
+            <p>We only introduce you when it fits you both. Every introduction comes with a plain-words explanation of why.</p>
+            <button class="try-link" type="button" data-try="2">Try this step <span aria-hidden="true">↑</span></button>
+          </li>
+          <li class="step">
+            <span class="step-number" aria-hidden="true">03</span>
+            <h3>Tell us how it went</h3>
+            <p>After a date, share private feedback. Only you see how it shapes what comes next.</p>
+            <button class="try-link" type="button" data-try="3">Try this step <span aria-hidden="true">↑</span></button>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- SCREENSHOT STRIP: illustrative designs, not final captures. EDITABLE PLACEHOLDERS: swap each .phone for a real screenshot when the build exists. -->
+    <section class="section screens-sec" id="screens" aria-labelledby="screens-title">
+      <div class="wrap">
+        <p class="kicker">A look inside</p>
+        <h2 id="screens-title">What you’ll see in the app</h2>
+        <p class="section-intro">Illustrative screens with example people, not real members.</p>
+      </div>
+      <div class="strip" tabindex="0" role="region" aria-label="App screens, scrolls sideways">
+        <div class="strip-track">
+          <figure class="shot"><div class="phone phone--sm" role="img" aria-label="Priorities screen: pick what matters and set a firm no."><div class="phone-in"><div class="phone-island"></div><div class="statusbar" aria-hidden="true"><span>9:41</span><span class="sb-icons"><i></i><i></i><i></i></span></div><div class="screen-static"><div class="app-body"><p class="app-kicker"><span class="kick-n">1</span>Your priorities</p><h3 class="app-title">What matters most to you?</h3><p class="app-sub">Pick up to three.</p><div class="chips"><span class="chip is-on">Kindness</span><span class="chip is-on">Family</span><span class="chip">Curiosity</span><span class="chip">Ambition</span><span class="chip is-on">Quiet nights</span><span class="chip">Adventure</span><span class="chip">Humor</span><span class="chip">Creativity</span></div><div class="firm-row"><div><strong>Firm no</strong><span>Never introduce me to someone who smokes</span></div><span class="switch is-on"><i></i></span></div><span class="app-btn">See my introduction</span></div></div></div></div><figcaption>Set your priorities</figcaption></figure>
+          <figure class="shot"><div class="phone phone--sm" role="img" aria-label="Introduction screen with the Why you’re meeting card."><div class="phone-in"><div class="phone-island"></div><div class="statusbar" aria-hidden="true"><span>9:41</span><span class="sb-icons"><i></i><i></i><i></i></span></div><div class="screen-static"><div class="app-body"><p class="app-kicker"><span class="kick-n">2</span>Your introduction</p><div class="who"><span class="pair-av"><span class="avatar av-you">You</span><span class="avatar av-them">J</span></span><div><strong>Jordan</strong><span>Example, not a real member</span></div></div><div class="why"><span class="why-label"><i></i>Why you’re meeting</span><p class="why-head">You both put kindness and family first.</p><dl><div><dt>Why you’d like them</dt><dd>They put kindness and family first, like you.</dd></div><div><dt>Why they’d like you</dt><dd>They’re looking for kindness. You put that on your list.</dd></div></dl></div><span class="app-btn">Say hello</span><span class="app-link">Not now</span></div></div></div></div><figcaption>Meet someone, with a reason</figcaption></figure>
+          <figure class="shot"><div class="phone phone--sm" role="img" aria-label="Fit both ways screen: your list and their list overlap."><div class="phone-in"><div class="phone-island"></div><div class="statusbar" aria-hidden="true"><span>9:41</span><span class="sb-icons"><i></i><i></i><i></i></span></div><div class="screen-static"><div class="app-body"><p class="app-kicker"><span class="kick-n">2</span>Fit, both ways</p><h3 class="app-title">You fit them. They fit you.</h3><div class="duo"><div><span class="duo-h">Your list</span><span class="chip is-on">Kindness</span><span class="chip is-on">Family</span><span class="chip">Quiet nights</span></div><div class="duo-mark"><svg class="mk " viewBox="0 0 100 100" aria-hidden="true" focusable="false"><path class="mk-l" d="M47 7A36 36 0 0 0 47 79Z"/><path class="mk-r" d="M53 21A36 36 0 0 1 53 93Z"/></svg></div><div><span class="duo-h">Their list</span><span class="chip is-on">Kindness</span><span class="chip is-on">Family</span><span class="chip">Honesty</span></div></div><ul class="fits"><li><svg class="ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Fits what you asked for</li><li><svg class="ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>You fit what they asked for</li></ul><span class="app-btn">See why we’re meeting</span></div></div></div></div><figcaption>See the fit from both sides</figcaption></figure>
+          <figure class="shot"><div class="phone phone--sm" role="img" aria-label="Feedback screen after a date."><div class="phone-in"><div class="phone-island"></div><div class="statusbar" aria-hidden="true"><span>9:41</span><span class="sb-icons"><i></i><i></i><i></i></span></div><div class="screen-static"><div class="app-body"><p class="app-kicker"><span class="kick-n">3</span>After your date</p><h3 class="app-title">How did it go with Jordan?</h3><div class="chips"><span class="chip is-on">Great</span><span class="chip">Fine</span><span class="chip">Not for me</span></div><p class="app-sub">Anything else? <span class="muted">Optional</span></p><div class="chips"><span class="chip is-on">Easy to talk to</span><span class="chip">Different pace</span><span class="chip">Different priorities</span><span class="chip">No spark</span></div><p class="app-note">Private. Only you see this.</p><span class="app-btn">Send private feedback</span></div></div></div></div><figcaption>Tell us how it went</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section different" id="different" aria-labelledby="diff-title">
+      <div class="wrap">
+        <p class="kicker">Why Halves is different</p>
+        <h2 id="diff-title">Fit that works for two people.</h2>
+        <div class="pair">
+          <article class="pair-half"><h3>Fit, from both sides</h3><p>A good match works for both people. We check whether they fit your priorities and whether you fit theirs, before either of you is introduced.</p></article>
+          <article class="pair-half"><h3>A reason for every introduction</h3><p>No mystery matches. Each introduction says why you’re meeting, so you know what to say first.</p></article>
+          <article class="pair-half"><h3>A few at a time</h3><p>A few introductions, each with a reason, instead of an endless feed. We’ll tell you the pace when we open.</p></article>
+        </div>
+        <p class="name-line">You’re whole already. A match just has two halves.</p>
+        <div class="pair pair--two">
+          <article class="pair-half"><h3>Halves is for</h3><p>New Yorkers aged 21–39 who want to be introduced for a reason, and would rather meet a few people than scroll through many.</p></article>
+          <article class="pair-half"><h3>Halves isn’t for</h3><p>Anyone who wants an endless feed to swipe through. And, for now, anyone outside New York.</p></article>
+        </div>
+        <!-- EDITABLE PLACEHOLDER: FOUNDER NOTE (hidden until real). Needs: founder name, a real signature or photo, 3 to 4 plain sentences on why, and a reply-to email. Suggested slot: a two-column block here, .founder in assets/site.css is not yet styled. Nothing is invented. -->
+        <!-- EDITABLE PLACEHOLDER: PRESS / PROOF (hidden until real). Only real coverage or real, consented early-member quotes. No logos, ratings, counts or badges before they exist. -->
+      </div>
+    </section>
+
+    <!-- PROMISE: big type, second sentences muted -->
+    <section class="section promise" id="promise" aria-labelledby="promise-title">
+      <div class="wrap">
+        <p class="kicker">The Promise</p>
+        <h2 class="visually-hidden" id="promise-title">What we’re promising</h2>
+        <ul class="promise-list" role="list">
+          <li><strong>No ads. Ever.</strong></li>
+          <li><strong>No paid visibility.</strong> <span>Nobody pays to be seen.</span></li>
+          <li><strong>We never sell your information.</strong></li>
+        </ul>
+        <p class="promise-close">We’ll publish the rest of the Promise when we can keep it. Not before.</p>
+      </div>
+    </section>
+
+    <section class="section safety" id="safety" aria-labelledby="safety-title">
+      <div class="wrap safety-grid">
+        <div>
+          <p class="kicker">Safety, plainly</p>
+          <h2 id="safety-title">What we’re building, and where it stands</h2>
+          <p>We’re building verification and reporting before we open. We’ll tell you exactly what we check and what we don’t, before you meet anyone.</p>
+          <p>Verification confirms identity, not intentions. Until the app is live, there’s nothing to join but a waitlist, and no one is introduced to anyone.</p>
+        </div>
+        <div class="check-wrap">
+          <table class="check-table">
+            <caption class="visually-hidden">Safety work and where each piece stands today</caption>
+            <thead><tr><th scope="col">What</th><th scope="col">Where it stands</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Verification</th><td><span class="tag">Building</span> Confirms identity, not intentions.</td></tr>
+              <tr><th scope="row">Reporting</th><td><span class="tag">Building</span> Before we open.</td></tr>
+              <tr><th scope="row">Blocking</th><td><span class="tag tag-plan">Planned</span> Before we open.</td></tr>
+              <tr><th scope="row">What we check, and what we don’t</th><td><span class="tag tag-plan">Planned</span> We’ll publish it before you meet anyone.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section join" id="join" aria-labelledby="join-title">
+      <div class="wrap join-grid">
+        <div class="join-copy">
+          <p class="kicker">NYC founding pool</p>
+          <h2 id="join-title">Get early access to the app</h2>
+          <p>We’re opening Halves to New Yorkers in small groups, so each group stays balanced. Join now and we’ll write when there’s room for you.</p>
+          <p>You’ll help shape how Halves works, and we’ll tell you what we learn. We’ll tell you the price before you pay anything.</p>
+          <p class="join-small">No ads. No paid visibility. We never sell your information.</p>
+        </div>
+
+        <div class="join-panel">
+          <noscript>
+            <p class="noscript-note">The form needs JavaScript. Turn it on and reload, or email hello@meethalves.com and we’ll add you.</p>
+          </noscript>
+
+          <form class="waitlist-form" id="waitlist-form" hidden method="post" action="api/waitlist" data-endpoint="api/waitlist">
+            <div class="field">
+              <label for="email">Email</label>
+              <input class="text-input" id="email" name="email" type="email" autocomplete="email" required maxlength="254" spellcheck="false" autocapitalize="off" aria-describedby="email-error">
+              <p class="field-error" id="email-error"></p>
+            </div>
+
+            <fieldset class="optional-group" aria-describedby="about-hint">
+              <legend>A little about you</legend>
+              <p class="hint" id="about-hint">Your first name lets us say hello. Age and ZIP help us build balanced groups near you.</p>
+
+              <div class="field-row field-row--names">
+                <div class="field">
+                  <label for="first_name">First name</label>
+                  <input class="text-input" id="first_name" name="first_name" type="text" autocomplete="given-name" required maxlength="60" aria-describedby="first_name-error">
+                  <p class="field-error" id="first_name-error"></p>
+                </div>
+                <div class="field">
+                  <label for="last_name">Last name</label>
+                  <input class="text-input" id="last_name" name="last_name" type="text" autocomplete="family-name" required maxlength="80" aria-describedby="last_name-error">
+                  <p class="field-error" id="last_name-error"></p>
+                </div>
+              </div>
+
+              <div class="field-row">
+                <div class="field">
+                  <label for="age">Age</label>
+                  <input class="text-input" id="age" name="age" type="number" inputmode="numeric" required min="18" max="99" step="1" aria-describedby="age-error">
+                  <p class="field-error" id="age-error"></p>
+                </div>
+                <div class="field">
+                  <label for="zip">ZIP code</label>
+                  <input class="text-input" id="zip" name="zip" type="text" inputmode="numeric" autocomplete="postal-code" required maxlength="5" pattern="[0-9]{5}" aria-describedby="zip-error">
+                  <p class="field-error" id="zip-error"></p>
+                </div>
+              </div>
+            </fieldset>
+
+            <div class="field consent">
+              <input id="consent" name="consent" type="checkbox" required aria-describedby="consent-error">
+              <label for="consent">I’m 18 or older, I’ve read the <a href="privacy/" target="_blank" rel="noopener">privacy notice<span class="visually-hidden"> (opens in a new tab)</span></a>, and I’d like emails about the Halves launch.</label>
+              <p class="field-error" id="consent-error"></p>
+            </div>
+
+            <div class="hp-field" aria-hidden="true">
+              <label for="website">Website</label>
+              <input id="website" name="website" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
+            </div>
+
+            <button class="button button-primary button-block" type="submit">Join the waitlist</button>
+          </form>
+
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+
+          <div class="join-success" id="waitlist-success" hidden>
+            <img class="success-mark" src="assets/brand/logo/halves-mark.svg" alt="" width="44" height="44">
+            <h3 id="success-title" tabindex="-1">You’re on the list.</h3>
+            <p>Thanks<span data-first-name></span>. We’ll email you when there’s room for you.</p>
+            <p>Know someone who’d rather be introduced for a reason than keep scrolling? Send them this page. A good group needs people on both sides.</p>
+            <div class="share-row">
+              <label class="visually-hidden" for="share-url">Link to share</label>
+              <input class="text-input" id="share-url" type="text" readonly value="https://meethalves.com/?utm_source=share&amp;utm_medium=referral&amp;utm_campaign=waitlist">
+              <button class="button button-ghost button-small" id="share-button" type="button" hidden>Copy link</button>
+            </div>
+            <p class="share-status" id="share-status" role="status" aria-live="polite"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section faq" id="faq" aria-labelledby="faq-title">
+      <div class="wrap faq-wrap">
+        <h2 id="faq-title">Questions</h2>
+        <div class="faq-list">
+          <details><summary>What is Halves?</summary><p>A dating app for New Yorkers aged 21–39. We introduce you only when the fit works both ways, and each introduction comes with a reason. We’re new, and we’re building it with our first members.</p></details>
+          <details><summary>What does “both ways” mean?</summary><p>Most apps ask whether someone matches what you want. We also ask whether you match what they want. If it only fits one side, we don’t introduce you.</p></details>
+          <details><summary>Why is it called Halves? Do I need someone to complete me?</summary><p>No. You’re whole. A match has two halves: your side and theirs. The name is about the fit, not about you.</p></details>
+          <details><summary>When does Halves open?</summary><p>We’re starting with a small founding pool in New York and opening in groups. We’ll email you when there’s room for you. We don’t have a date yet, and we won’t make one up.</p></details>
+          <details><summary>What does it cost?</summary><p>Joining the waitlist is free. We’ll tell you the price before you pay anything, and nobody will be charged without clear notice of the amount, the renewal date, and how to cancel.</p></details>
+          <details><summary>What do you do with my information?</summary><p>We ask for the minimum: your email, first name, age and ZIP, so we can build balanced groups. No ads. We never sell your information. See the <a href="privacy/">privacy notice</a>.</p></details>
+          <details><summary>How do you keep people safe?</summary><p>We’re building verification and reporting before we open, and we’ll publish exactly what we check and what we don’t. Verification confirms identity, not intentions. Until it’s live, there’s nothing to join but a waitlist, and no one is introduced to anyone.</p></details>
+          <details><summary>Will you really only introduce a few people?</summary><p>Yes. A few at a time, each with a reason, instead of an endless feed. We’ll tell you the pace when we open.</p></details>
+          <details><summary>Why New York?</summary><p>We’re starting with one group of New Yorkers, kept in balance, so introductions can work for both sides. We’ll tell you if that changes.</p></details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div class="foot-brand">
+        <a class="brand brand-small" href="./" aria-label="Halves home"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/brand/logo/halves-lockup-on-dark.svg"><img class="brand-logo" src="assets/brand/logo/halves-lockup.svg" alt="" width="105" height="30"></picture></a>
+        <p class="foot-tag">Halves. Where compatibility works both ways. New York, 2026.</p>
+      </div>
+      <nav aria-label="Footer">
+        <ul class="footer-links">
+          <li><a href="privacy/">Privacy</a></li>
+          <li><a href="mailto:hello@meethalves.com">hello@meethalves.com</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

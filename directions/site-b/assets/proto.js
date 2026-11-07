@@ -16,8 +16,8 @@
   // Example people. Not real members. Each lists what they put first and what they look for.
   var PEOPLE = [
     { name: "Jordan", has: ["Kindness", "Family", "Quiet nights", "Honesty"], looks: ["Kindness", "Family", "Quiet nights", "Honesty", "Humor"] },
-    { name: "Sam", has: ["Curiosity", "Adventure", "Humor", "Creativity"], looks: ["Curiosity", "Adventure", "Humor", "Creativity", "Kindness"] },
-    { name: "Riley", has: ["Ambition", "Fitness", "Honesty", "Humor"], looks: ["Ambition", "Fitness", "Honesty", "Humor", "Adventure"] }
+    { name: "Sam", has: ["Curiosity", "Adventure", "Humor", "Ambition"], looks: ["Curiosity", "Adventure", "Humor", "Ambition", "Kindness"] },
+    { name: "Riley", has: ["Ambition", "Honesty", "Humor", "Adventure"], looks: ["Ambition", "Honesty", "Humor", "Adventure", "Family"] }
   ];
   var DEFAULT_PICKS = ["Kindness", "Family", "Curiosity"];
 
